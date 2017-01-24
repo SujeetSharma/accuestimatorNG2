@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4" style="background-color:lavender;">
+<ngb-accordion [closeOthers]="true" activeIds="1">
+  <ngb-panel id="1" title="Simple">
+    <template ngbPanelContent>
+      Anim pariatur cliche reprehenderit
+    </template>
+  </ngb-panel>
+  <ngb-panel id="2">
+    <template ngbPanelTitle>
+      <span>&#9733; <b>Fancy</b> title &#9733;</span>
+    </template>
+    <template ngbPanelContent>
+      aw denim aesthetic synth nesciunt 
+    </template>
+  </ngb-panel>
+  <ngb-panel id="3" title="Disabled" [disabled]="true">
+    <template ngbPanelContent>
+      Food truck quinoa nesciunt laborum
+    </template>
+  </ngb-panel>
+</ngb-accordion>
+    </div>
+     <div class="col-sm-8" style="background-color:plum;">col-8</div>
+</div>
+</div>
