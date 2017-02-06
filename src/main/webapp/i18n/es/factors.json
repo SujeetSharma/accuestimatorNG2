@@ -1,0 +1,33 @@
+{
+    "accuestimatorNg2App": {
+        "factors" : {
+            "home": {
+                "title": "Factors",
+                "createLabel": "Crear nuevo Factors",
+                "createOrEditLabel": "Crear o editar Factors",
+                "search": "Search for Factors"
+            },
+            "created": "Un nuevo Factors ha sido creado con el identificador {{ param }}",
+            "updated": "Un Factors ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Factors ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Factors {{ id }}?"
+            },
+            "detail": {
+                "title": "Factors"
+            },
+            "name": "Name",
+            "category": "Category",
+            "type": "Type",
+            "value": "Value",
+            "version": "Version",
+            "state": "State",
+            "createdby": "Createdby",
+            "createdon": "Createdon",
+            "modifiedby": "Modifiedby",
+            "modifiedon": "Modifiedon",
+            "description": "Description",
+            "active": "Active"
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "accuestimatorNg2App": {
+        "tasks" : {
+            "home": {
+                "title": "Tasks",
+                "createLabel": "Crear nuevo Tasks",
+                "createOrEditLabel": "Crear o editar Tasks",
+                "search": "Search for Tasks"
+            },
+            "created": "Un nuevo Tasks ha sido creado con el identificador {{ param }}",
+            "updated": "Un Tasks ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Tasks ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Tasks {{ id }}?"
+            },
+            "detail": {
+                "title": "Tasks"
+            },
+            "name": "Name",
+            "category": "Category",
+            "type": "Type",
+            "value": "Value",
+            "version": "Version",
+            "state": "State",
+            "createdby": "Createdby",
+            "createdon": "Createdon",
+            "modifiedby": "Modifiedby",
+            "modifiedon": "Modifiedon",
+            "description": "Description",
+            "active": "Active"
+        }
+    }
+}

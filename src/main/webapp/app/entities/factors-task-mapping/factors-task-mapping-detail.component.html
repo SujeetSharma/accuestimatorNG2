@@ -1,0 +1,76 @@
+
+<div *ngIf="factorsTaskMapping">
+    <h2><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.detail.title">Factors Task Mapping</span> {{factorsTaskMapping.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.taskCategory">Task Category</span></dt>
+        <dd>
+            <span>{{factorsTaskMapping.taskCategory}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.task">Task</span></dt>
+        <dd>
+            <span>{{factorsTaskMapping.task}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.factor">Factor</span></dt>
+        <dd>
+            <span>{{factorsTaskMapping.factor}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.factorCategory">Factor Category</span></dt>
+        <dd>
+            <span>{{factorsTaskMapping.factorCategory}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.formula">Formula</span></dt>
+        <dd>
+            <span>{{factorsTaskMapping.formula}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.value">Value</span></dt>
+        <dd>
+            <span>{{factorsTaskMapping.value}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.version">Version</span></dt>
+        <dd>
+            <span>{{factorsTaskMapping.version}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.state">State</span></dt>
+        <dd>
+            <span jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + factorsTaskMapping.state}}">{{factorsTaskMapping.state}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.createdby">Createdby</span></dt>
+        <dd>
+            <span>{{factorsTaskMapping.createdby}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.createdon">Createdon</span></dt>
+        <dd>
+            <span>{{factorsTaskMapping.createdon | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.modifiedby">Modifiedby</span></dt>
+        <dd>
+            <span>{{factorsTaskMapping.modifiedby}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.modifiedon">Modifiedon</span></dt>
+        <dd>
+            <span>{{factorsTaskMapping.modifiedon | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.description">Description</span></dt>
+        <dd>
+            <span>{{factorsTaskMapping.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.active">Active</span></dt>
+        <dd>
+            <span>{{factorsTaskMapping.active}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'factorsTaskMapping-edit/'+ factorsTaskMapping.id } }]"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

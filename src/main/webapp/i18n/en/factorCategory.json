@@ -1,0 +1,31 @@
+{
+    "accuestimatorNg2App": {
+        "factorCategory" : {
+            "home": {
+                "title": "Factor Categories",
+                "createLabel": "Create new",
+                "createOrEditLabel": "Create or edit a Factor Category",
+                "search": "Search for Factor Category"
+            },
+            "created": "A new Factor Category is created with identifier {{ param }}",
+            "updated": "A Factor Category is updated with identifier {{ param }}",
+            "deleted": "A Factor Category is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Factor Category {{ id }}?"
+            },
+            "detail": {
+                "title": "Factor Category"
+            },
+            "name": "Name",
+            "type": "Type",
+            "version": "Version",
+            "state": "State",
+            "createdby": "Createdby",
+            "createdon": "Createdon",
+            "modifiedby": "Modifiedby",
+            "modifiedon": "Modifiedon",
+            "description": "Description",
+            "active": "Active"
+        }
+    }
+}

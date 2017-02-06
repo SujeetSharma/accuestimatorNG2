@@ -1,0 +1,71 @@
+<div>
+    <h2><span jhiTranslate="accuestimatorNg2App.values.home.title">Values</span>
+        <button class="btn btn-primary float-xs-right" [routerLink]="['/', { outlets: { popup: ['values-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="accuestimatorNg2App.values.home.createLabel">
+            Create new Values
+            </span>
+        </button></h2>
+    <jhi-alert></jhi-alert>
+
+    <div class="container-fluid">
+        <div class="row">
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="values">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.values.value">Value</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.values.version">Version</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.values.state">State</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.values.createdby">Createdby</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.values.createdon">Createdon</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.values.modifiedby">Modifiedby</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.values.modifiedon">Modifiedon</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.values.description">Description</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.values.active">Active</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let values of values ;trackBy: trackId">
+                <td><a [routerLink]="['../values', values.id ]" >{{values.id}}</a></td>
+                <td>{{values.value}}</td>
+                <td>{{values.version}}</td>
+                <td jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + values.state}}">{{values.state}}</td>
+                <td>{{values.createdby}}</td>
+                <td>{{values.createdon | date:'medium'}}</td>
+                <td>{{values.modifiedby}}</td>
+                <td>{{values.modifiedon | date:'medium'}}</td>
+                <td>{{values.description}}</td>
+                <td>{{values.active}}</td>
+                <td class="text-xs-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../values', values.id ]" 
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.view"></span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'values-edit/'+ values.id } }]"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.edit"></span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'values-delete/'+ values.id } }]"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.delete"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

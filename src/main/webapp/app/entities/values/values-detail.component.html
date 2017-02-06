@@ -1,0 +1,56 @@
+
+<div *ngIf="values">
+    <h2><span jhiTranslate="accuestimatorNg2App.values.detail.title">Values</span> {{values.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="accuestimatorNg2App.values.value">Value</span></dt>
+        <dd>
+            <span>{{values.value}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.values.version">Version</span></dt>
+        <dd>
+            <span>{{values.version}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.values.state">State</span></dt>
+        <dd>
+            <span jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + values.state}}">{{values.state}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.values.createdby">Createdby</span></dt>
+        <dd>
+            <span>{{values.createdby}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.values.createdon">Createdon</span></dt>
+        <dd>
+            <span>{{values.createdon | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.values.modifiedby">Modifiedby</span></dt>
+        <dd>
+            <span>{{values.modifiedby}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.values.modifiedon">Modifiedon</span></dt>
+        <dd>
+            <span>{{values.modifiedon | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.values.description">Description</span></dt>
+        <dd>
+            <span>{{values.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.values.active">Active</span></dt>
+        <dd>
+            <span>{{values.active}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'values-edit/'+ values.id } }]"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

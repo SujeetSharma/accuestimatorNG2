@@ -1,0 +1,60 @@
+
+<div *ngIf="taskCategory">
+    <h2><span jhiTranslate="accuestimatorNg2App.taskCategory.detail.title">Task Category</span> {{taskCategory.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="accuestimatorNg2App.taskCategory.name">Name</span></dt>
+        <dd>
+            <span>{{taskCategory.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.taskCategory.type">Type</span></dt>
+        <dd>
+            <span jhiTranslate="{{'accuestimatorNg2App.TYPEENUM.' + taskCategory.type}}">{{taskCategory.type}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.taskCategory.version">Version</span></dt>
+        <dd>
+            <span>{{taskCategory.version}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.taskCategory.state">State</span></dt>
+        <dd>
+            <span jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + taskCategory.state}}">{{taskCategory.state}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.taskCategory.createdby">Createdby</span></dt>
+        <dd>
+            <span>{{taskCategory.createdby}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.taskCategory.createdon">Createdon</span></dt>
+        <dd>
+            <span>{{taskCategory.createdon | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.taskCategory.modifiedby">Modifiedby</span></dt>
+        <dd>
+            <span>{{taskCategory.modifiedby}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.taskCategory.modifiedon">Modifiedon</span></dt>
+        <dd>
+            <span>{{taskCategory.modifiedon | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.taskCategory.description">Description</span></dt>
+        <dd>
+            <span>{{taskCategory.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.taskCategory.active">Active</span></dt>
+        <dd>
+            <span>{{taskCategory.active}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'taskCategory-edit/'+ taskCategory.id } }]"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

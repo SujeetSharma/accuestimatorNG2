@@ -1,0 +1,38 @@
+{
+    "accuestimatorNg2App": {
+        "estimates" : {
+            "home": {
+                "title": "Estimates",
+                "createLabel": "Crear nuevo Estimates",
+                "createOrEditLabel": "Crear o editar Estimates",
+                "search": "Search for Estimates"
+            },
+            "created": "Un nuevo Estimates ha sido creado con el identificador {{ param }}",
+            "updated": "Un Estimates ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Estimates ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Estimates {{ id }}?"
+            },
+            "detail": {
+                "title": "Estimates"
+            },
+            "project": "Project",
+            "type": "Type",
+            "taskCategory": "Task Category",
+            "task": "Task",
+            "factor": "Factor",
+            "factorCategory": "Factor Category",
+            "formula": "Formula",
+            "value": "Value",
+            "version": "Version",
+            "state": "State",
+            "copiedFrom": "Copied From",
+            "createdby": "Createdby",
+            "createdon": "Createdon",
+            "modifiedby": "Modifiedby",
+            "modifiedon": "Modifiedon",
+            "description": "Description",
+            "active": "Active"
+        }
+    }
+}

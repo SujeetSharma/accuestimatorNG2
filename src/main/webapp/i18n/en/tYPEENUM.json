@@ -1,0 +1,15 @@
+{
+    "accuestimatorNg2App": {
+        "TYPEENUM" : {
+            "null": "",
+            "TECHNICAL": "TECHNICAL",
+            "MANAGEMENT": "MANAGEMENT",
+            "CODING": "CODING",
+            "TESTING": "TESTING",
+            "DEPLOYMENT": "DEPLOYMENT",
+            "REVIEW": "REVIEW",
+            "REWORK": "REWORK",
+            "OTHERS": "OTHERS"
+        }
+    }
+}

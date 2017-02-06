@@ -1,0 +1,35 @@
+{
+    "accuestimatorNg2App": {
+        "factorsTaskMapping" : {
+            "home": {
+                "title": "Factors Task Mappings",
+                "createLabel": "Crear nuevo Factors Task Mapping",
+                "createOrEditLabel": "Crear o editar Factors Task Mapping",
+                "search": "Search for Factors Task Mapping"
+            },
+            "created": "Un nuevo Factors Task Mapping ha sido creado con el identificador {{ param }}",
+            "updated": "Un Factors Task Mapping ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Factors Task Mapping ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Factors Task Mapping {{ id }}?"
+            },
+            "detail": {
+                "title": "Factors Task Mapping"
+            },
+            "taskCategory": "Task Category",
+            "task": "Task",
+            "factor": "Factor",
+            "factorCategory": "Factor Category",
+            "formula": "Formula",
+            "value": "Value",
+            "version": "Version",
+            "state": "State",
+            "createdby": "Createdby",
+            "createdon": "Createdon",
+            "modifiedby": "Modifiedby",
+            "modifiedon": "Modifiedon",
+            "description": "Description",
+            "active": "Active"
+        }
+    }
+}

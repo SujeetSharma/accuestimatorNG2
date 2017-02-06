@@ -1,0 +1,31 @@
+{
+    "accuestimatorNg2App": {
+        "projects" : {
+            "home": {
+                "title": "Projects",
+                "createLabel": "Create a new Projects",
+                "createOrEditLabel": "Create or edit a Projects",
+                "search": "Search for Projects"
+            },
+            "created": "A new Projects is created with identifier {{ param }}",
+            "updated": "A Projects is updated with identifier {{ param }}",
+            "deleted": "A Projects is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Projects {{ id }}?"
+            },
+            "detail": {
+                "title": "Projects"
+            },
+            "name": "Name",
+            "description": "Description",
+            "type": "Type",
+            "state": "State",
+            "createdby": "Createdby",
+            "createdon": "Createdon",
+            "modifiedby": "Modifiedby",
+            "modifiedon": "Modifiedon",
+            "version": "Version",
+            "active": "Active"
+        }
+    }
+}

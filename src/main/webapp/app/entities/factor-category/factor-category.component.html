@@ -1,0 +1,80 @@
+<div>
+    <h2><span jhiTranslate="accuestimatorNg2App.factorCategory.home.title">Factor Categories</span>
+        <button class="btn btn-primary float-xs-right" [routerLink]="['/', { outlets: { popup: ['factorCategory-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="accuestimatorNg2App.factorCategory.home.createLabel">
+            Create new
+            </span>
+        </button></h2>
+    <jhi-alert></jhi-alert> 
+
+    <div class="container-fluid">
+        <div class="row">
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="factorCategories">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+           <!-- <th><span jhiTranslate="global.field.id">ID</span></th>-->
+            <th><span jhiTranslate="accuestimatorNg2App.factorCategory.name">Name</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.factorCategory.type">Type</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.factorCategory.version">Version</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.factorCategory.state">State</span></th>
+           <!-- <th><span jhiTranslate="accuestimatorNg2App.factorCategory.createdby">Createdby</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.factorCategory.createdon">Createdon</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.factorCategory.modifiedby">Modifiedby</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.factorCategory.modifiedon">Modifiedon</span></th>-->
+            <th><span jhiTranslate="accuestimatorNg2App.factorCategory.description">Description</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.factorCategory.active">Active</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let factorCategory of factorCategories ;trackBy: trackId">
+               <!-- <td><a [routerLink]="['../factorCategory', factorCategory.id ]" >{{factorCategory.id}}</a></td>-->
+                <td>{{factorCategory.name}}</td>
+                <td jhiTranslate="{{'accuestimatorNg2App.TYPEENUM.' + factorCategory.type}}">{{factorCategory.type}}</td>
+                <td>{{factorCategory.version}}</td>
+                <td jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + factorCategory.state}}">{{factorCategory.state}}</td>
+               <!-- <td>{{factorCategory.createdby}}</td>
+                <td>{{factorCategory.createdon | date:'medium'}}</td>
+                <td>{{factorCategory.modifiedby}}</td>
+                <td>{{factorCategory.modifiedon | date:'medium'}}</td> -->
+                <td>{{factorCategory.description}}</td>
+                <td>{{factorCategory.active}}</td>
+                <td class="text-xs-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../factor-category', factorCategory.id ]" 
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                           <!-- <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.view"></span>-->
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'factorCategory-edit/'+ factorCategory.id } }]"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <!--<span class="hidden-xs hidden-sm" jhiTranslate="entity.action.edit"></span>-->
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'factorCategory-delete/'+ factorCategory.id } }]"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <!--<span class="hidden-xs hidden-sm" jhiTranslate="entity.action.delete"></span>-->
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['../factors']" 
+                                (click)="setInfo(factorCategory.name,factorCategory.id)"
+                                class="btn btn-group btn-sm">
+                            <span class="fa fa-plus"></span>    
+                            <span class="hidden-xs hidden-sm" > >> </span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

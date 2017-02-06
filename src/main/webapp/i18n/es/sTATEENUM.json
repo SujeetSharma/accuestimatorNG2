@@ -1,0 +1,13 @@
+{
+    "accuestimatorNg2App": {
+        "STATEENUM" : {
+            "null": "",
+            "DRAFT": "DRAFT",
+            "INPROGRESS": "INPROGRESS",
+            "COMPLETED": "COMPLETED",
+            "READY": "READY",
+            "INQUEUE": "INQUEUE",
+            "APPROVED": "APPROVED"
+        }
+    }
+}

@@ -1,0 +1,80 @@
+<div>
+    <h2><span jhiTranslate="accuestimatorNg2App.factors.home.title">Factors</span> for Category - {{catname}}
+        <button class="btn btn-primary float-xs-right" [routerLink]="['/', { outlets: { popup: 'factors-new/'+catid } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="accuestimatorNg2App.factors.home.createLabel">
+            Create new
+            </span>
+        </button></h2>
+    <jhi-alert></jhi-alert>
+
+    <div class="container-fluid">
+        <div class="row">
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="factors">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+           <!-- <th><span jhiTranslate="global.field.id">ID</span></th>-->
+            <th><span jhiTranslate="accuestimatorNg2App.factors.name">Name</span></th>
+           <!-- <th><span jhiTranslate="accuestimatorNg2App.factors.category">Category</span></th>-->
+            <th><span jhiTranslate="accuestimatorNg2App.factors.type">Type</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.factors.value">Value</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.factors.version">Version</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.factors.state">State</span></th>
+           <!-- <th><span jhiTranslate="accuestimatorNg2App.factors.createdby">Createdby</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.factors.createdon">Createdon</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.factors.modifiedby">Modifiedby</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.factors.modifiedon">Modifiedon</span></th>-->
+            <th><span jhiTranslate="accuestimatorNg2App.factors.description">Description</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.factors.active">Active</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let factors of factors ;trackBy: trackId">
+               <ng-container *ngIf="((factors.category === catid)||(catid == null))">
+               <!-- <td><a [routerLink]="['../factors', factors.id ]" >{{factors.id}}</a></td>-->
+                <td>{{factors.name}}</td>
+                
+                <!--<td>{{factors.category}}</td>-->
+                <td jhiTranslate="{{'accuestimatorNg2App.TYPEENUM.' + factors.type}}">{{factors.type}}</td>
+                <td>{{factors.value}}</td>
+                <td>{{factors.version}}</td>
+                <td jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + factors.state}}">{{factors.state}}</td>
+                <!--<td>{{factors.createdby}}</td>
+                <td>{{factors.createdon | date:'medium'}}</td>
+                <td>{{factors.modifiedby}}</td>
+                <td>{{factors.modifiedon | date:'medium'}}</td>-->
+                <td>{{factors.description}}</td>
+                <td>{{factors.active}}</td>
+                <td class="text-xs-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../factors', factors.id ]" 
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <!--<span class="hidden-xs hidden-sm" jhiTranslate="entity.action.view"></span>-->
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'factors-edit/'+ factors.id } }]"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <!--<span class="hidden-xs hidden-sm" jhiTranslate="entity.action.edit"></span>-->
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'factors-delete/'+ factors.id } }]"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <!--<span class="hidden-xs hidden-sm" jhiTranslate="entity.action.delete"></span>-->
+                        </button>
+                    </div>
+                </td>
+               </ng-container> 
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

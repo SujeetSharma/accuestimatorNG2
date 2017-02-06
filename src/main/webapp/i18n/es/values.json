@@ -1,0 +1,30 @@
+{
+    "accuestimatorNg2App": {
+        "values" : {
+            "home": {
+                "title": "Values",
+                "createLabel": "Crear nuevo Values",
+                "createOrEditLabel": "Crear o editar Values",
+                "search": "Search for Values"
+            },
+            "created": "Un nuevo Values ha sido creado con el identificador {{ param }}",
+            "updated": "Un Values ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Values ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Values {{ id }}?"
+            },
+            "detail": {
+                "title": "Values"
+            },
+            "value": "Value",
+            "version": "Version",
+            "state": "State",
+            "createdby": "Createdby",
+            "createdon": "Createdon",
+            "modifiedby": "Modifiedby",
+            "modifiedon": "Modifiedon",
+            "description": "Description",
+            "active": "Active"
+        }
+    }
+}

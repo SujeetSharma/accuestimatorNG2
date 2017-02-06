@@ -8,6 +8,14 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entidades",
+                "factorCategory": "Factor Category",
+                "factors": "Factors",
+                "taskCategory": "Task Category",
+                "tasks": "Tasks",
+                "factorsTaskMapping": "Factors Task Mapping",
+                "estimates": "Estimates",
+                "projects": "Projects",
+                "values": "Values",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
