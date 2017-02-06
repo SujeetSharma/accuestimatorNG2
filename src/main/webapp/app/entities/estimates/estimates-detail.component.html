@@ -4,33 +4,33 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="row">
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.project">Project</span></dt>
+        <dt><span jhiTranslate="accuestimatorNg2App.estimates.name">Name</span></dt>
         <dd>
-            <span>{{estimates.project}}</span>
+            <span>{{estimates.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.estimates.description">Description</span></dt>
+        <dd>
+            <span>{{estimates.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.estimates.projectId">Project Id</span></dt>
+        <dd>
+            <span>{{estimates.projectId}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.estimates.templateId">Template Id</span></dt>
+        <dd>
+            <span>{{estimates.templateId}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.estimates.taskId">Task Id</span></dt>
+        <dd>
+            <span>{{estimates.taskId}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.estimates.factorId">Factor Id</span></dt>
+        <dd>
+            <span>{{estimates.factorId}}</span>
         </dd>
         <dt><span jhiTranslate="accuestimatorNg2App.estimates.type">Type</span></dt>
         <dd>
             <span jhiTranslate="{{'accuestimatorNg2App.TYPEENUM.' + estimates.type}}">{{estimates.type}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.taskCategory">Task Category</span></dt>
-        <dd>
-            <span>{{estimates.taskCategory}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.task">Task</span></dt>
-        <dd>
-            <span>{{estimates.task}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.factor">Factor</span></dt>
-        <dd>
-            <span>{{estimates.factor}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.factorCategory">Factor Category</span></dt>
-        <dd>
-            <span>{{estimates.factorCategory}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.formula">Formula</span></dt>
-        <dd>
-            <span>{{estimates.formula}}</span>
         </dd>
         <dt><span jhiTranslate="accuestimatorNg2App.estimates.value">Value</span></dt>
         <dd>
@@ -44,9 +44,9 @@
         <dd>
             <span jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + estimates.state}}">{{estimates.state}}</span>
         </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.copiedFrom">Copied From</span></dt>
+        <dt><span jhiTranslate="accuestimatorNg2App.estimates.referencedFrom">Referenced From</span></dt>
         <dd>
-            <span>{{estimates.copiedFrom}}</span>
+            <span>{{estimates.referencedFrom}}</span>
         </dd>
         <dt><span jhiTranslate="accuestimatorNg2App.estimates.createdby">Createdby</span></dt>
         <dd>
@@ -63,10 +63,6 @@
         <dt><span jhiTranslate="accuestimatorNg2App.estimates.modifiedon">Modifiedon</span></dt>
         <dd>
             <span>{{estimates.modifiedon | date:'medium'}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.description">Description</span></dt>
-        <dd>
-            <span>{{estimates.description}}</span>
         </dd>
         <dt><span jhiTranslate="accuestimatorNg2App.estimates.active">Active</span></dt>
         <dd>

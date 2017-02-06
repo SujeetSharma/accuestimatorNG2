@@ -79,6 +79,7 @@ module.exports = function (options) {
                 { from: './src/main/webapp/swagger-ui/', to: 'swagger-ui' },
                 { from: './src/main/webapp/favicon.ico', to: 'favicon.ico' },
                 { from: './src/main/webapp/robots.txt', to: 'robots.txt' },
+                { from: './src/main/webapp/img/', to: 'img' },
                 { from: './src/main/webapp/i18n', to: 'i18n' }
             ]),
             new webpack.ProvidePlugin({

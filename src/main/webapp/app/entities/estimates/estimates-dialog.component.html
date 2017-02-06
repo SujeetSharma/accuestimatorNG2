@@ -15,13 +15,67 @@
                    [(ngModel)]="estimates.id" readonly />
         </div>
         <div class="form-group">
-        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.project" for="field_project">Project</label>
-    <input type="text" class="form-control" name="project" id="field_project"
-           [(ngModel)]="estimates.project"
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.name" for="field_name">Name</label>
+    <input type="text" class="form-control" name="name" id="field_name"
+           [(ngModel)]="estimates.name"
     required />
-    <div [hidden]="!(editForm.controls.project?.dirty && editForm.controls.project?.invalid)">
+    <div [hidden]="!(editForm.controls.name?.dirty && editForm.controls.name?.invalid)">
         <small class="form-text text-danger"
-           [hidden]="!editForm.controls.project?.errors?.required" jhiTranslate="entity.validation.required">
+           [hidden]="!editForm.controls.name?.errors?.required" jhiTranslate="entity.validation.required">
+            This field is required.
+        </small>
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.description" for="field_description">Description</label>
+    <input type="text" class="form-control" name="description" id="field_description"
+           [(ngModel)]="estimates.description"
+     />
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.projectId" for="field_projectId">Project Id</label>
+    <input type="text" class="form-control" name="projectId" id="field_projectId"
+           [(ngModel)]="estimates.projectId"
+    required />
+    <div [hidden]="!(editForm.controls.projectId?.dirty && editForm.controls.projectId?.invalid)">
+        <small class="form-text text-danger"
+           [hidden]="!editForm.controls.projectId?.errors?.required" jhiTranslate="entity.validation.required">
+            This field is required.
+        </small>
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.templateId" for="field_templateId">Template Id</label>
+    <input type="text" class="form-control" name="templateId" id="field_templateId"
+           [(ngModel)]="estimates.templateId"
+    required />
+    <div [hidden]="!(editForm.controls.templateId?.dirty && editForm.controls.templateId?.invalid)">
+        <small class="form-text text-danger"
+           [hidden]="!editForm.controls.templateId?.errors?.required" jhiTranslate="entity.validation.required">
+            This field is required.
+        </small>
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.taskId" for="field_taskId">Task Id</label>
+    <input type="text" class="form-control" name="taskId" id="field_taskId"
+           [(ngModel)]="estimates.taskId"
+    required />
+    <div [hidden]="!(editForm.controls.taskId?.dirty && editForm.controls.taskId?.invalid)">
+        <small class="form-text text-danger"
+           [hidden]="!editForm.controls.taskId?.errors?.required" jhiTranslate="entity.validation.required">
+            This field is required.
+        </small>
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.factorId" for="field_factorId">Factor Id</label>
+    <input type="text" class="form-control" name="factorId" id="field_factorId"
+           [(ngModel)]="estimates.factorId"
+    required />
+    <div [hidden]="!(editForm.controls.factorId?.dirty && editForm.controls.factorId?.invalid)">
+        <small class="form-text text-danger"
+           [hidden]="!editForm.controls.factorId?.errors?.required" jhiTranslate="entity.validation.required">
             This field is required.
         </small>
         </div>
@@ -41,66 +95,6 @@
     <div [hidden]="!(editForm.controls.type?.dirty && editForm.controls.type?.invalid)">
         <small class="form-text text-danger"
            [hidden]="!editForm.controls.type?.errors?.required" jhiTranslate="entity.validation.required">
-            This field is required.
-        </small>
-        </div>
-    </div>
-        <div class="form-group">
-        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.taskCategory" for="field_taskCategory">Task Category</label>
-    <input type="text" class="form-control" name="taskCategory" id="field_taskCategory"
-           [(ngModel)]="estimates.taskCategory"
-    required />
-    <div [hidden]="!(editForm.controls.taskCategory?.dirty && editForm.controls.taskCategory?.invalid)">
-        <small class="form-text text-danger"
-           [hidden]="!editForm.controls.taskCategory?.errors?.required" jhiTranslate="entity.validation.required">
-            This field is required.
-        </small>
-        </div>
-    </div>
-        <div class="form-group">
-        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.task" for="field_task">Task</label>
-    <input type="text" class="form-control" name="task" id="field_task"
-           [(ngModel)]="estimates.task"
-    required />
-    <div [hidden]="!(editForm.controls.task?.dirty && editForm.controls.task?.invalid)">
-        <small class="form-text text-danger"
-           [hidden]="!editForm.controls.task?.errors?.required" jhiTranslate="entity.validation.required">
-            This field is required.
-        </small>
-        </div>
-    </div>
-        <div class="form-group">
-        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.factor" for="field_factor">Factor</label>
-    <input type="text" class="form-control" name="factor" id="field_factor"
-           [(ngModel)]="estimates.factor"
-    required />
-    <div [hidden]="!(editForm.controls.factor?.dirty && editForm.controls.factor?.invalid)">
-        <small class="form-text text-danger"
-           [hidden]="!editForm.controls.factor?.errors?.required" jhiTranslate="entity.validation.required">
-            This field is required.
-        </small>
-        </div>
-    </div>
-        <div class="form-group">
-        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.factorCategory" for="field_factorCategory">Factor Category</label>
-    <input type="text" class="form-control" name="factorCategory" id="field_factorCategory"
-           [(ngModel)]="estimates.factorCategory"
-    required />
-    <div [hidden]="!(editForm.controls.factorCategory?.dirty && editForm.controls.factorCategory?.invalid)">
-        <small class="form-text text-danger"
-           [hidden]="!editForm.controls.factorCategory?.errors?.required" jhiTranslate="entity.validation.required">
-            This field is required.
-        </small>
-        </div>
-    </div>
-        <div class="form-group">
-        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.formula" for="field_formula">Formula</label>
-    <input type="text" class="form-control" name="formula" id="field_formula"
-           [(ngModel)]="estimates.formula"
-    required />
-    <div [hidden]="!(editForm.controls.formula?.dirty && editForm.controls.formula?.invalid)">
-        <small class="form-text text-danger"
-           [hidden]="!editForm.controls.formula?.errors?.required" jhiTranslate="entity.validation.required">
             This field is required.
         </small>
         </div>
@@ -151,13 +145,13 @@
         </div>
     </div>
         <div class="form-group">
-        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.copiedFrom" for="field_copiedFrom">Copied From</label>
-    <input type="text" class="form-control" name="copiedFrom" id="field_copiedFrom"
-           [(ngModel)]="estimates.copiedFrom"
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.referencedFrom" for="field_referencedFrom">Referenced From</label>
+    <input type="text" class="form-control" name="referencedFrom" id="field_referencedFrom"
+           [(ngModel)]="estimates.referencedFrom"
     required />
-    <div [hidden]="!(editForm.controls.copiedFrom?.dirty && editForm.controls.copiedFrom?.invalid)">
+    <div [hidden]="!(editForm.controls.referencedFrom?.dirty && editForm.controls.referencedFrom?.invalid)">
         <small class="form-text text-danger"
-           [hidden]="!editForm.controls.copiedFrom?.errors?.required" jhiTranslate="entity.validation.required">
+           [hidden]="!editForm.controls.referencedFrom?.errors?.required" jhiTranslate="entity.validation.required">
             This field is required.
         </small>
         </div>
@@ -193,12 +187,6 @@
                         <button type="button" class="btn btn-default" (click)="modifiedonDp.open()"><i class="fa fa-calendar"></i></button>
                     </span>
     </div>
-    </div>
-        <div class="form-group">
-        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.description" for="field_description">Description</label>
-    <input type="text" class="form-control" name="description" id="field_description"
-           [(ngModel)]="estimates.description"
-     />
     </div>
         <div class="form-group">
         <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.active" for="field_active">Active</label>

@@ -1,0 +1,32 @@
+{
+    "accuestimatorNg2App": {
+        "projectTemplateMapping" : {
+            "home": {
+                "title": "Project Template Mappings",
+                "createLabel": "Create a new Project Template Mapping",
+                "createOrEditLabel": "Create or edit a Project Template Mapping",
+                "search": "Search for Project Template Mapping"
+            },
+            "created": "A new Project Template Mapping is created with identifier {{ param }}",
+            "updated": "A Project Template Mapping is updated with identifier {{ param }}",
+            "deleted": "A Project Template Mapping is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Project Template Mapping {{ id }}?"
+            },
+            "detail": {
+                "title": "Project Template Mapping"
+            },
+            "name": "Name",
+            "description": "Description",
+            "projectId": "Project Id",
+            "templateId": "Template Id",
+            "active": "Active",
+            "version": "Version",
+            "state": "State",
+            "createdby": "Createdby",
+            "createdon": "Createdon",
+            "modifiedby": "Modifiedby",
+            "modifiedon": "Modifiedon"
+        }
+    }
+}

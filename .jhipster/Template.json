@@ -1,0 +1,64 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "factorTaskId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "STATEENUM",
+            "fieldValues": "DRAFT,INPROGRESS,COMPLETED,READY,INQUEUE,APPROVED",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "createdby",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdon",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "referencedFrom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "modifiedby",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "modifiedon",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170206220419",
+    "entityTableName": "template",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

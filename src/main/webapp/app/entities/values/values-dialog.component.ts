@@ -46,10 +46,10 @@ export class ValuesDialogComponent implements OnInit {
         this.isSaving = true;
         if (this.values.id !== undefined) {
             this.valuesService.update(this.values)
-                .subscribe((res: any) => this.onSaveSuccess(res), (res: Response) => this.onSaveError(res.json()));
+                .subscribe((res: Response) => this.onSaveSuccess(res), (res: Response) => this.onSaveError(res.json()));
         } else {
             this.valuesService.create(this.values)
-                .subscribe((res: any) => this.onSaveSuccess(res), (res: Response) => this.onSaveError(res.json()));
+                .subscribe((res: Response) => this.onSaveSuccess(res), (res: Response) => this.onSaveError(res.json()));
         }
     }
 

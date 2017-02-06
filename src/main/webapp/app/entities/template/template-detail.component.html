@@ -1,0 +1,60 @@
+
+<div *ngIf="template">
+    <h2><span jhiTranslate="accuestimatorNg2App.template.detail.title">Template</span> {{template.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="accuestimatorNg2App.template.active">Active</span></dt>
+        <dd>
+            <span>{{template.active}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.template.factorTaskId">Factor Task Id</span></dt>
+        <dd>
+            <span>{{template.factorTaskId}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.template.version">Version</span></dt>
+        <dd>
+            <span>{{template.version}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.template.state">State</span></dt>
+        <dd>
+            <span jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + template.state}}">{{template.state}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.template.createdby">Createdby</span></dt>
+        <dd>
+            <span>{{template.createdby}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.template.createdon">Createdon</span></dt>
+        <dd>
+            <span>{{template.createdon | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.template.referencedFrom">Referenced From</span></dt>
+        <dd>
+            <span>{{template.referencedFrom}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.template.modifiedby">Modifiedby</span></dt>
+        <dd>
+            <span>{{template.modifiedby}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.template.modifiedon">Modifiedon</span></dt>
+        <dd>
+            <span>{{template.modifiedon | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.template.description">Description</span></dt>
+        <dd>
+            <span>{{template.description}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'template-edit/'+ template.id } }]"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

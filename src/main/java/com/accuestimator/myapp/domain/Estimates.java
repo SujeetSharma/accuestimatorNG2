@@ -26,32 +26,31 @@ public class Estimates implements Serializable {
     private String id;
 
     @NotNull
-    @Field("project")
-    private String project;
+    @Field("name")
+    private String name;
+
+    @Field("description")
+    private String description;
+
+    @NotNull
+    @Field("project_id")
+    private String projectId;
+
+    @NotNull
+    @Field("template_id")
+    private String templateId;
+
+    @NotNull
+    @Field("task_id")
+    private String taskId;
+
+    @NotNull
+    @Field("factor_id")
+    private String factorId;
 
     @NotNull
     @Field("type")
     private TYPEENUM type;
-
-    @NotNull
-    @Field("task_category")
-    private String taskCategory;
-
-    @NotNull
-    @Field("task")
-    private String task;
-
-    @NotNull
-    @Field("factor")
-    private String factor;
-
-    @NotNull
-    @Field("factor_category")
-    private String factorCategory;
-
-    @NotNull
-    @Field("formula")
-    private String formula;
 
     @NotNull
     @Field("value")
@@ -66,8 +65,8 @@ public class Estimates implements Serializable {
     private STATEENUM state;
 
     @NotNull
-    @Field("copied_from")
-    private String copiedFrom;
+    @Field("referenced_from")
+    private String referencedFrom;
 
     @Field("createdby")
     private String createdby;
@@ -81,9 +80,6 @@ public class Estimates implements Serializable {
     @Field("modifiedon")
     private ZonedDateTime modifiedon;
 
-    @Field("description")
-    private String description;
-
     @NotNull
     @Field("active")
     private Boolean active;
@@ -96,17 +92,82 @@ public class Estimates implements Serializable {
         this.id = id;
     }
 
-    public String getProject() {
-        return project;
+    public String getName() {
+        return name;
     }
 
-    public Estimates project(String project) {
-        this.project = project;
+    public Estimates name(String name) {
+        this.name = name;
         return this;
     }
 
-    public void setProject(String project) {
-        this.project = project;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Estimates description(String description) {
+        this.description = description;
+        return this;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public Estimates projectId(String projectId) {
+        this.projectId = projectId;
+        return this;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
+    public String getTemplateId() {
+        return templateId;
+    }
+
+    public Estimates templateId(String templateId) {
+        this.templateId = templateId;
+        return this;
+    }
+
+    public void setTemplateId(String templateId) {
+        this.templateId = templateId;
+    }
+
+    public String getTaskId() {
+        return taskId;
+    }
+
+    public Estimates taskId(String taskId) {
+        this.taskId = taskId;
+        return this;
+    }
+
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
+    }
+
+    public String getFactorId() {
+        return factorId;
+    }
+
+    public Estimates factorId(String factorId) {
+        this.factorId = factorId;
+        return this;
+    }
+
+    public void setFactorId(String factorId) {
+        this.factorId = factorId;
     }
 
     public TYPEENUM getType() {
@@ -120,71 +181,6 @@ public class Estimates implements Serializable {
 
     public void setType(TYPEENUM type) {
         this.type = type;
-    }
-
-    public String getTaskCategory() {
-        return taskCategory;
-    }
-
-    public Estimates taskCategory(String taskCategory) {
-        this.taskCategory = taskCategory;
-        return this;
-    }
-
-    public void setTaskCategory(String taskCategory) {
-        this.taskCategory = taskCategory;
-    }
-
-    public String getTask() {
-        return task;
-    }
-
-    public Estimates task(String task) {
-        this.task = task;
-        return this;
-    }
-
-    public void setTask(String task) {
-        this.task = task;
-    }
-
-    public String getFactor() {
-        return factor;
-    }
-
-    public Estimates factor(String factor) {
-        this.factor = factor;
-        return this;
-    }
-
-    public void setFactor(String factor) {
-        this.factor = factor;
-    }
-
-    public String getFactorCategory() {
-        return factorCategory;
-    }
-
-    public Estimates factorCategory(String factorCategory) {
-        this.factorCategory = factorCategory;
-        return this;
-    }
-
-    public void setFactorCategory(String factorCategory) {
-        this.factorCategory = factorCategory;
-    }
-
-    public String getFormula() {
-        return formula;
-    }
-
-    public Estimates formula(String formula) {
-        this.formula = formula;
-        return this;
-    }
-
-    public void setFormula(String formula) {
-        this.formula = formula;
     }
 
     public Float getValue() {
@@ -226,17 +222,17 @@ public class Estimates implements Serializable {
         this.state = state;
     }
 
-    public String getCopiedFrom() {
-        return copiedFrom;
+    public String getReferencedFrom() {
+        return referencedFrom;
     }
 
-    public Estimates copiedFrom(String copiedFrom) {
-        this.copiedFrom = copiedFrom;
+    public Estimates referencedFrom(String referencedFrom) {
+        this.referencedFrom = referencedFrom;
         return this;
     }
 
-    public void setCopiedFrom(String copiedFrom) {
-        this.copiedFrom = copiedFrom;
+    public void setReferencedFrom(String referencedFrom) {
+        this.referencedFrom = referencedFrom;
     }
 
     public String getCreatedby() {
@@ -291,19 +287,6 @@ public class Estimates implements Serializable {
         this.modifiedon = modifiedon;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public Estimates description(String description) {
-        this.description = description;
-        return this;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public Boolean isActive() {
         return active;
     }
@@ -341,22 +324,21 @@ public class Estimates implements Serializable {
     public String toString() {
         return "Estimates{" +
             "id=" + id +
-            ", project='" + project + "'" +
+            ", name='" + name + "'" +
+            ", description='" + description + "'" +
+            ", projectId='" + projectId + "'" +
+            ", templateId='" + templateId + "'" +
+            ", taskId='" + taskId + "'" +
+            ", factorId='" + factorId + "'" +
             ", type='" + type + "'" +
-            ", taskCategory='" + taskCategory + "'" +
-            ", task='" + task + "'" +
-            ", factor='" + factor + "'" +
-            ", factorCategory='" + factorCategory + "'" +
-            ", formula='" + formula + "'" +
             ", value='" + value + "'" +
             ", version='" + version + "'" +
             ", state='" + state + "'" +
-            ", copiedFrom='" + copiedFrom + "'" +
+            ", referencedFrom='" + referencedFrom + "'" +
             ", createdby='" + createdby + "'" +
             ", createdon='" + createdon + "'" +
             ", modifiedby='" + modifiedby + "'" +
             ", modifiedon='" + modifiedon + "'" +
-            ", description='" + description + "'" +
             ", active='" + active + "'" +
             '}';
     }

@@ -16,9 +16,12 @@
         </div>
         <div class="form-group">
         <label class="form-control-label" jhiTranslate="accuestimatorNg2App.factorsTaskMapping.taskCategory" for="field_taskCategory">Task Category</label>
-    <input type="text" class="form-control" name="taskCategory" id="field_taskCategory"
+    <!--<input type="text" class="form-control" name="taskCategory" id="field_taskCategory"
            [(ngModel)]="factorsTaskMapping.taskCategory"
-    required />
+    required />-->
+     <select required name="taskCategory" class="form-control" id="field_taskCategory" [(ngModel)]="factorsTaskMapping.taskCategory">
+         <option *ngFor="let taskCat of taskCategory" [ngValue]="taskCat.id">{{taskCat.name}}</option>
+     </select>
     <div [hidden]="!(editForm.controls.taskCategory?.dirty && editForm.controls.taskCategory?.invalid)">
         <small class="form-text text-danger"
            [hidden]="!editForm.controls.taskCategory?.errors?.required" jhiTranslate="entity.validation.required">
@@ -28,9 +31,12 @@
     </div>
         <div class="form-group">
         <label class="form-control-label" jhiTranslate="accuestimatorNg2App.factorsTaskMapping.task" for="field_task">Task</label>
-    <input type="text" class="form-control" name="task" id="field_task"
+    <!--<input type="text" class="form-control" name="task" id="field_task"
            [(ngModel)]="factorsTaskMapping.task"
-    required />
+    required />-->
+    <select required name="task" class="form-control" id="field_task" [(ngModel)]="factorsTaskMapping.task">
+         <option *ngFor="let task of tasks" [ngValue]="task.id">{{task.name}}</option>
+     </select>
     <div [hidden]="!(editForm.controls.task?.dirty && editForm.controls.task?.invalid)">
         <small class="form-text text-danger"
            [hidden]="!editForm.controls.task?.errors?.required" jhiTranslate="entity.validation.required">
@@ -40,9 +46,12 @@
     </div>
         <div class="form-group">
         <label class="form-control-label" jhiTranslate="accuestimatorNg2App.factorsTaskMapping.factor" for="field_factor">Factor</label>
-    <input type="text" class="form-control" name="factor" id="field_factor"
+   <!-- <input type="text" class="form-control" name="factor" id="field_factor"
            [(ngModel)]="factorsTaskMapping.factor"
-    required />
+    required /> -->
+     <select required name="factor" class="form-control" id="field_factor" [(ngModel)]="factorsTaskMapping.factor">
+         <option *ngFor="let factor of factors" [ngValue]="factor.id">{{factor.name}}</option>
+     </select>
     <div [hidden]="!(editForm.controls.factor?.dirty && editForm.controls.factor?.invalid)">
         <small class="form-text text-danger"
            [hidden]="!editForm.controls.factor?.errors?.required" jhiTranslate="entity.validation.required">
@@ -52,9 +61,12 @@
     </div>
         <div class="form-group">
         <label class="form-control-label" jhiTranslate="accuestimatorNg2App.factorsTaskMapping.factorCategory" for="field_factorCategory">Factor Category</label>
-    <input type="text" class="form-control" name="factorCategory" id="field_factorCategory"
+    <!--<input type="text" class="form-control" name="factorCategory" id="field_factorCategory"
            [(ngModel)]="factorsTaskMapping.factorCategory"
-    required />
+    required />-->
+     <select required name="factorCategory" class="form-control" id="field_factorCategory" [(ngModel)]="factorsTaskMapping.factorCategory">
+         <option *ngFor="let factorCat of factorCategory" [ngValue]="factorCat.id">{{factorCat.name}}</option>
+     </select>
     <div [hidden]="!(editForm.controls.factorCategory?.dirty && editForm.controls.factorCategory?.invalid)">
         <small class="form-text text-danger"
            [hidden]="!editForm.controls.factorCategory?.errors?.required" jhiTranslate="entity.validation.required">
@@ -119,7 +131,7 @@
         </small>
         </div>
     </div>
-        <div class="form-group">
+       <!-- <div class="form-group">
         <label class="form-control-label" jhiTranslate="accuestimatorNg2App.factorsTaskMapping.createdby" for="field_createdby">Createdby</label>
     <input type="text" class="form-control" name="createdby" id="field_createdby"
            [(ngModel)]="factorsTaskMapping.createdby"
@@ -150,7 +162,7 @@
                         <button type="button" class="btn btn-default" (click)="modifiedonDp.open()"><i class="fa fa-calendar"></i></button>
                     </span>
     </div>
-    </div>
+    </div>-->
         <div class="form-group">
         <label class="form-control-label" jhiTranslate="accuestimatorNg2App.factorsTaskMapping.description" for="field_description">Description</label>
     <input type="text" class="form-control" name="description" id="field_description"

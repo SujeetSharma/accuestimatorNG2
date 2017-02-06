@@ -2,8 +2,8 @@
     "accuestimatorNg2App": {
         "factorsTaskMapping" : {
             "home": {
-                "title": "Factors Task Mappings",
-                "createLabel": "Create a new Factors Task Mapping",
+                "title": "Factors vs Task Mappings",
+                "createLabel": "Create new",
                 "createOrEditLabel": "Create or edit a Factors Task Mapping",
                 "search": "Search for Factors Task Mapping"
             },

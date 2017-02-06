@@ -1,0 +1,100 @@
+entity FactorCategory {
+    name String required,
+    type TYPEENUM required,
+    version String required,
+    state STATEENUM required,
+    createdby String,
+    createdon ZonedDateTime ,
+    modifiedby String,
+    modifiedon ZonedDateTime,
+    description String,
+    active Boolean required
+}
+
+entity Factors {
+    name String required ,
+    category String required,
+    type TYPEENUM required,
+    value Float required,
+    version String required,
+    state STATEENUM required,
+    createdby String,
+    createdon ZonedDateTime ,
+    modifiedby String ,
+    modifiedon ZonedDateTime ,
+	description String,
+    active Boolean required
+}
+
+entity TaskCategory {
+    name String required ,
+    type TYPEENUM required,
+    version String required,
+    state STATEENUM required,
+    createdby String,
+    createdon ZonedDateTime ,
+    modifiedby String,
+    modifiedon ZonedDateTime ,
+    description String,
+    active Boolean required
+}
+
+entity Tasks {
+    name String required ,
+    category String required,
+    type TYPEENUM required,
+    value Float required,
+    version String required,
+    state STATEENUM required,
+    createdby String,
+    createdon ZonedDateTime ,
+    modifiedby String,
+    modifiedon ZonedDateTime,
+	description String,
+    active Boolean required
+}
+
+entity FactorsTaskMapping {
+    taskCategory String required,
+    task String required,
+    factor String required,
+    factorCategory String required,
+    formula String required,
+    value Float required,
+    version String required,
+    state STATEENUM required,
+    createdby String,
+    createdon ZonedDateTime ,
+    modifiedby String ,
+    modifiedon ZonedDateTime ,
+    description String,
+    active Boolean required
+}
+
+entity Estimates {
+    project String required,
+    type TYPEENUM required,
+	taskCategory String required,
+    task String required,
+    factor String required,
+    factorCategory String required,
+    formula String required,
+    value Float required,
+    version String required,
+    state STATEENUM required,
+    copiedFrom String required,
+    createdby String,
+    createdon ZonedDateTime ,
+    modifiedby String,
+    modifiedon ZonedDateTime,
+    description String,
+    active Boolean required
+}
+
+enum STATEENUM {
+    DRAFT, INPROGRESS, COMPLETED, READY, INQUEUE, APPROVED
+}
+
+enum TYPEENUM {
+    TECHNICAL, MANAGEMENT, CODING, TESTING, DEPLOYMENT, REVIEW, REWORK, OTHERS
+}

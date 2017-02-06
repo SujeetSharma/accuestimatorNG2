@@ -1,0 +1,64 @@
+
+<div *ngIf="projectTemplateMapping">
+    <h2><span jhiTranslate="accuestimatorNg2App.projectTemplateMapping.detail.title">Project Template Mapping</span> {{projectTemplateMapping.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="accuestimatorNg2App.projectTemplateMapping.name">Name</span></dt>
+        <dd>
+            <span>{{projectTemplateMapping.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectTemplateMapping.description">Description</span></dt>
+        <dd>
+            <span>{{projectTemplateMapping.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectTemplateMapping.projectId">Project Id</span></dt>
+        <dd>
+            <span>{{projectTemplateMapping.projectId}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectTemplateMapping.templateId">Template Id</span></dt>
+        <dd>
+            <span>{{projectTemplateMapping.templateId}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectTemplateMapping.active">Active</span></dt>
+        <dd>
+            <span>{{projectTemplateMapping.active}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectTemplateMapping.version">Version</span></dt>
+        <dd>
+            <span>{{projectTemplateMapping.version}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectTemplateMapping.state">State</span></dt>
+        <dd>
+            <span jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + projectTemplateMapping.state}}">{{projectTemplateMapping.state}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectTemplateMapping.createdby">Createdby</span></dt>
+        <dd>
+            <span>{{projectTemplateMapping.createdby}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectTemplateMapping.createdon">Createdon</span></dt>
+        <dd>
+            <span>{{projectTemplateMapping.createdon | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectTemplateMapping.modifiedby">Modifiedby</span></dt>
+        <dd>
+            <span>{{projectTemplateMapping.modifiedby}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectTemplateMapping.modifiedon">Modifiedon</span></dt>
+        <dd>
+            <span>{{projectTemplateMapping.modifiedon | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'projectTemplateMapping-edit/'+ projectTemplateMapping.id } }]"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

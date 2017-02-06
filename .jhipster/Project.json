@@ -1,0 +1,64 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "STATEENUM",
+            "fieldValues": "DRAFT,INPROGRESS,COMPLETED,READY,INQUEUE,APPROVED",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "createdby",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "referencedFrom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdon",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "modifiedby",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "modifiedon",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170206220420",
+    "entityTableName": "project",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

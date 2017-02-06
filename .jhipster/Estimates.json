@@ -3,7 +3,39 @@
     "relationships": [],
     "fields": [
         {
-            "fieldName": "project",
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "projectId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "templateId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "taskId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "factorId",
             "fieldType": "String",
             "fieldValidateRules": [
                 "required"
@@ -13,41 +45,6 @@
             "fieldName": "type",
             "fieldType": "TYPEENUM",
             "fieldValues": "TECHNICAL,MANAGEMENT,CODING,TESTING,DEPLOYMENT,REVIEW,REWORK,OTHERS",
-            "fieldValidateRules": [
-                "required"
-            ]
-        },
-        {
-            "fieldName": "taskCategory",
-            "fieldType": "String",
-            "fieldValidateRules": [
-                "required"
-            ]
-        },
-        {
-            "fieldName": "task",
-            "fieldType": "String",
-            "fieldValidateRules": [
-                "required"
-            ]
-        },
-        {
-            "fieldName": "factor",
-            "fieldType": "String",
-            "fieldValidateRules": [
-                "required"
-            ]
-        },
-        {
-            "fieldName": "factorCategory",
-            "fieldType": "String",
-            "fieldValidateRules": [
-                "required"
-            ]
-        },
-        {
-            "fieldName": "formula",
-            "fieldType": "String",
             "fieldValidateRules": [
                 "required"
             ]
@@ -75,7 +72,7 @@
             ]
         },
         {
-            "fieldName": "copiedFrom",
+            "fieldName": "referencedFrom",
             "fieldType": "String",
             "fieldValidateRules": [
                 "required"
@@ -96,10 +93,6 @@
         {
             "fieldName": "modifiedon",
             "fieldType": "ZonedDateTime"
-        },
-        {
-            "fieldName": "description",
-            "fieldType": "String"
         },
         {
             "fieldName": "active",

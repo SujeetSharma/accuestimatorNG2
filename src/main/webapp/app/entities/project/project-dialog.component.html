@@ -1,0 +1,124 @@
+
+
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+        <h4 class="modal-title" id="myProjectLabel" jhiTranslate="accuestimatorNg2App.project.home.createOrEditLabel">Create or edit a Project</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!project.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="project.id" readonly />
+        </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.project.name" for="field_name">Name</label>
+    <input type="text" class="form-control" name="name" id="field_name"
+           [(ngModel)]="project.name"
+    required />
+    <div [hidden]="!(editForm.controls.name?.dirty && editForm.controls.name?.invalid)">
+        <small class="form-text text-danger"
+           [hidden]="!editForm.controls.name?.errors?.required" jhiTranslate="entity.validation.required">
+            This field is required.
+        </small>
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.project.description" for="field_description">Description</label>
+    <input type="text" class="form-control" name="description" id="field_description"
+           [(ngModel)]="project.description"
+     />
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.project.active" for="field_active">Active</label>
+    <input type="checkbox" class="form-control" name="active" id="field_active"
+           [(ngModel)]="project.active"
+     />
+    <div [hidden]="!(editForm.controls.active?.dirty && editForm.controls.active?.invalid)">
+        <small class="form-text text-danger"
+           [hidden]="!editForm.controls.active?.errors?.required" jhiTranslate="entity.validation.required">
+            This field is required.
+        </small>
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.project.version" for="field_version">Version</label>
+    <input type="text" class="form-control" name="version" id="field_version"
+           [(ngModel)]="project.version"
+    required />
+    <div [hidden]="!(editForm.controls.version?.dirty && editForm.controls.version?.invalid)">
+        <small class="form-text text-danger"
+           [hidden]="!editForm.controls.version?.errors?.required" jhiTranslate="entity.validation.required">
+            This field is required.
+        </small>
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.project.state" for="field_state">State</label>
+        <select class="form-control" name="state" [(ngModel)]="project.state" id="field_state"  required>
+        <option value="DRAFT" jhiTranslate="accuestimatorNg2App.STATEENUM.DRAFT">DRAFT</option>
+        <option value="INPROGRESS" jhiTranslate="accuestimatorNg2App.STATEENUM.INPROGRESS">INPROGRESS</option>
+        <option value="COMPLETED" jhiTranslate="accuestimatorNg2App.STATEENUM.COMPLETED">COMPLETED</option>
+        <option value="READY" jhiTranslate="accuestimatorNg2App.STATEENUM.READY">READY</option>
+        <option value="INQUEUE" jhiTranslate="accuestimatorNg2App.STATEENUM.INQUEUE">INQUEUE</option>
+        <option value="APPROVED" jhiTranslate="accuestimatorNg2App.STATEENUM.APPROVED">APPROVED</option>
+        </select>
+    <div [hidden]="!(editForm.controls.state?.dirty && editForm.controls.state?.invalid)">
+        <small class="form-text text-danger"
+           [hidden]="!editForm.controls.state?.errors?.required" jhiTranslate="entity.validation.required">
+            This field is required.
+        </small>
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.project.createdby" for="field_createdby">Createdby</label>
+    <input type="text" class="form-control" name="createdby" id="field_createdby"
+           [(ngModel)]="project.createdby"
+     />
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.project.referencedFrom" for="field_referencedFrom">Referenced From</label>
+    <input type="text" class="form-control" name="referencedFrom" id="field_referencedFrom"
+           [(ngModel)]="project.referencedFrom"
+     />
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.project.createdon" for="field_createdon">Createdon</label>
+        <div class="input-group">
+            <input id="field_createdon" type="text" class="form-control" name="createdon" ngbDatepicker #createdonDp="ngbDatepicker" [(ngModel)]="project.createdon"
+              />
+        <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" (click)="createdonDp.open()"><i class="fa fa-calendar"></i></button>
+                    </span>
+    </div>
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.project.modifiedby" for="field_modifiedby">Modifiedby</label>
+    <input type="text" class="form-control" name="modifiedby" id="field_modifiedby"
+           [(ngModel)]="project.modifiedby"
+     />
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.project.modifiedon" for="field_modifiedon">Modifiedon</label>
+        <div class="input-group">
+            <input id="field_modifiedon" type="text" class="form-control" name="modifiedon" ngbDatepicker #modifiedonDp="ngbDatepicker" [(ngModel)]="project.modifiedon"
+              />
+        <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" (click)="modifiedonDp.open()"><i class="fa fa-calendar"></i></button>
+                    </span>
+    </div>
+    </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -8,6 +8,14 @@ import { EventManager, AlertService, JhiLanguageService } from 'ng-jhipster';
 import { FactorsTaskMapping } from './factors-task-mapping.model';
 import { FactorsTaskMappingPopupService } from './factors-task-mapping-popup.service';
 import { FactorsTaskMappingService } from './factors-task-mapping.service';
+import {FactorCategoryService} from '../factor-category/factor-category.service';
+import {FactorsService} from '../factors/factors.service';
+import {TaskCategoryService} from '../task-category/task-category.service';
+import {TasksService} from '../tasks/tasks.service';
+import {FactorCategory } from '../factor-category/factor-category.model';
+import {TaskCategory } from '../task-category/task-category.model';
+import {Factors } from '../factors/factors.model';
+import {Tasks } from '../tasks/tasks.model';
 
 
 // TODO replace ng-file-upload dependency by an ng2 depedency
@@ -21,13 +29,21 @@ export class FactorsTaskMappingDialogComponent implements OnInit {
     factorsTaskMapping: FactorsTaskMapping;
     authorities: any[];
     isSaving: boolean;
+    factorCategory: FactorCategory
+    taskCategory: TaskCategoryService;
+    factors: FactorsService;
+    tasks: TasksService;
     constructor(
         private jhiLanguageService: JhiLanguageService,
         public activeModal: NgbActiveModal,
         private alertService: AlertService,
         private factorsTaskMappingService: FactorsTaskMappingService,
         private eventManager: EventManager,
-        private router: Router
+        private router: Router,
+        private factorCategoryService: FactorCategoryService,
+        private taskCategoryService: TaskCategoryService,
+        private factorsService: FactorsService,
+        private tasksService: TasksService
     ) {
         this.jhiLanguageService.setLocations(['factorsTaskMapping', 'sTATEENUM']);
     }
@@ -35,8 +51,40 @@ export class FactorsTaskMappingDialogComponent implements OnInit {
     ngOnInit() {
         this.isSaving = false;
         this.authorities = ['ROLE_USER', 'ROLE_ADMIN'];
+        this.factorCategoryService.query().subscribe(
+            (res: Response) => {
+                this.factorCategory = res.json();
+        });
+        this.taskCategoryService.query().subscribe(
+            (res: Response) => {
+                this.taskCategory = res.json();
+        });
+        this.factorsService.query().subscribe(
+            (res: Response) => {
+                this.factors = res.json();
+        });
+        this.tasksService.query().subscribe(
+            (res: Response) => {
+                this.tasks = res.json();
+        });
     }
-
+    
+    onFactorCatSelect(countryid) {
+       // this.states = this._dataService.getStates().filter((item)=> item.countryid == countryid);
+        this.factorsService.query().subscribe(
+            (res: Response) => {
+                this.factors = res.json();
+        });
+    }
+    
+    onTaskCatSelect(countryid) {
+        // this.states = this._dataService.getStates().filter((item)=> item.countryid == countryid);
+         this.tasksService.query().subscribe(
+            (res: Response) => {
+                this.tasks = res.json();
+        });
+    }
+   
     clear () {
         this.activeModal.dismiss('cancel');
         this.router.navigate([{ outlets: { popup: null }}]);

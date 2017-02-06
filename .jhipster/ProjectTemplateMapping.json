@@ -1,0 +1,74 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "projectId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "templateId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "STATEENUM",
+            "fieldValues": "DRAFT,INPROGRESS,COMPLETED,READY,INQUEUE,APPROVED",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "createdby",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdon",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "modifiedby",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "modifiedon",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170206220421",
+    "entityTableName": "project_template_mapping",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

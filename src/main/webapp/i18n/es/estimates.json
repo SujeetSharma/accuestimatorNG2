@@ -16,22 +16,21 @@
             "detail": {
                 "title": "Estimates"
             },
-            "project": "Project",
+            "name": "Name",
+            "description": "Description",
+            "projectId": "Project Id",
+            "templateId": "Template Id",
+            "taskId": "Task Id",
+            "factorId": "Factor Id",
             "type": "Type",
-            "taskCategory": "Task Category",
-            "task": "Task",
-            "factor": "Factor",
-            "factorCategory": "Factor Category",
-            "formula": "Formula",
             "value": "Value",
             "version": "Version",
             "state": "State",
-            "copiedFrom": "Copied From",
+            "referencedFrom": "Referenced From",
             "createdby": "Createdby",
             "createdon": "Createdon",
             "modifiedby": "Modifiedby",
             "modifiedon": "Modifiedon",
-            "description": "Description",
             "active": "Active"
         }
     }

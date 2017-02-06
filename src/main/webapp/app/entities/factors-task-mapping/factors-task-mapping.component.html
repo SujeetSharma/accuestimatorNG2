@@ -17,19 +17,19 @@
         <table class="table table-striped">
             <thead>
             <tr>
-            <th><span jhiTranslate="global.field.id">ID</span></th>
+           <!-- <th><span jhiTranslate="global.field.id">ID</span></th> -->
             <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.taskCategory">Task Category</span></th>
-            <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.task">Task</span></th>
+             <th>   <span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.task">Task</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.factor">Factor</span></th>
-            <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.factorCategory">Factor Category</span></th>
+             <th>   <span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.factorCategory">Factor Category</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.formula">Formula</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.value">Value</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.version">Version</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.state">State</span></th>
-            <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.createdby">Createdby</span></th>
+           <!-- <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.createdby">Createdby</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.createdon">Createdon</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.modifiedby">Modifiedby</span></th>
-            <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.modifiedon">Modifiedon</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.modifiedon">Modifiedon</span></th> -->
             <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.description">Description</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.active">Active</span></th>
             <th></th>
@@ -37,7 +37,7 @@
             </thead>
             <tbody>
             <tr *ngFor="let factorsTaskMapping of factorsTaskMappings ;trackBy: trackId">
-                <td><a [routerLink]="['../factorsTaskMapping', factorsTaskMapping.id ]" >{{factorsTaskMapping.id}}</a></td>
+               <!-- <td><a [routerLink]="['../factorsTaskMapping', factorsTaskMapping.id ]" >{{factorsTaskMapping.id}}</a></td>-->
                 <td>{{factorsTaskMapping.taskCategory}}</td>
                 <td>{{factorsTaskMapping.task}}</td>
                 <td>{{factorsTaskMapping.factor}}</td>
@@ -46,10 +46,10 @@
                 <td>{{factorsTaskMapping.value}}</td>
                 <td>{{factorsTaskMapping.version}}</td>
                 <td jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + factorsTaskMapping.state}}">{{factorsTaskMapping.state}}</td>
-                <td>{{factorsTaskMapping.createdby}}</td>
+                <!--<td>{{factorsTaskMapping.createdby}}</td>
                 <td>{{factorsTaskMapping.createdon | date:'medium'}}</td>
                 <td>{{factorsTaskMapping.modifiedby}}</td>
-                <td>{{factorsTaskMapping.modifiedon | date:'medium'}}</td>
+                <td>{{factorsTaskMapping.modifiedon | date:'medium'}}</td> -->
                 <td>{{factorsTaskMapping.description}}</td>
                 <td>{{factorsTaskMapping.active}}</td>
                 <td class="text-xs-right">

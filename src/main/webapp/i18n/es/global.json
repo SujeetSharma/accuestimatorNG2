@@ -16,6 +16,9 @@
                 "estimates": "Estimates",
                 "projects": "Projects",
                 "values": "Values",
+                "template": "Template",
+                "project": "Project",
+                "projectTemplateMapping": "Project Template Mapping",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

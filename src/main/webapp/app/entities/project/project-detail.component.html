@@ -1,0 +1,60 @@
+
+<div *ngIf="project">
+    <h2><span jhiTranslate="accuestimatorNg2App.project.detail.title">Project</span> {{project.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="accuestimatorNg2App.project.name">Name</span></dt>
+        <dd>
+            <span>{{project.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.project.description">Description</span></dt>
+        <dd>
+            <span>{{project.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.project.active">Active</span></dt>
+        <dd>
+            <span>{{project.active}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.project.version">Version</span></dt>
+        <dd>
+            <span>{{project.version}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.project.state">State</span></dt>
+        <dd>
+            <span jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + project.state}}">{{project.state}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.project.createdby">Createdby</span></dt>
+        <dd>
+            <span>{{project.createdby}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.project.referencedFrom">Referenced From</span></dt>
+        <dd>
+            <span>{{project.referencedFrom}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.project.createdon">Createdon</span></dt>
+        <dd>
+            <span>{{project.createdon | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.project.modifiedby">Modifiedby</span></dt>
+        <dd>
+            <span>{{project.modifiedby}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.project.modifiedon">Modifiedon</span></dt>
+        <dd>
+            <span>{{project.modifiedon | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'project-edit/'+ project.id } }]"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
