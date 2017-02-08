@@ -21,5 +21,6 @@ export class Project {
         public createdon?: any,
         public modifiedby?: string,
         public modifiedon?: any,
+        public templateId?: string[],
     ) { }
 }

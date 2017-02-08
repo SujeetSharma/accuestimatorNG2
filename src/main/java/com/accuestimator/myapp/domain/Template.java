@@ -28,8 +28,12 @@ public class Template implements Serializable {
     private Boolean active;
 
     @NotNull
+    @Field("name")
+    private String name;
+
+    @NotNull
     @Field("factor_task_id")
-    private String factorTaskId;
+    private String[] factorTaskId;
 
     @NotNull
     @Field("version")
@@ -78,16 +82,29 @@ public class Template implements Serializable {
         this.active = active;
     }
 
-    public String getFactorTaskId() {
+    public String getName() {
+        return name;
+    }
+
+    public Template name(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String[] getFactorTaskId() {
         return factorTaskId;
     }
 
-    public Template factorTaskId(String factorTaskId) {
+    public Template factorTaskId(String[] factorTaskId) {
         this.factorTaskId = factorTaskId;
         return this;
     }
 
-    public void setFactorTaskId(String factorTaskId) {
+    public void setFactorTaskId(String[] factorTaskId) {
         this.factorTaskId = factorTaskId;
     }
 

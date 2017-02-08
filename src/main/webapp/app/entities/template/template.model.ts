@@ -11,8 +11,9 @@ const enum STATEENUM {
 export class Template {
     constructor(
         public id?: string,
+        public name?: string,
         public active?: boolean,
-        public factorTaskId?: string,
+        public factorTaskId?: string[],
         public version?: string,
         public state?: STATEENUM,
         public createdby?: string,

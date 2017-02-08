@@ -8,7 +8,8 @@ import { EventManager, AlertService, JhiLanguageService } from 'ng-jhipster';
 import { Project } from './project.model';
 import { ProjectPopupService } from './project-popup.service';
 import { ProjectService } from './project.service';
-
+import { TemplateService } from '../template/template.service';
+import { Template } from '../template/template.model';
 
 // TODO replace ng-file-upload dependency by an ng2 depedency
 // TODO Find a better way to format dates so that it works with NgbDatePicker
@@ -21,20 +22,42 @@ export class ProjectDialogComponent implements OnInit {
     project: Project;
     authorities: any[];
     isSaving: boolean;
+    templates: Template[];
+    values:Array<any>= [];
+
     constructor(
         private jhiLanguageService: JhiLanguageService,
         public activeModal: NgbActiveModal,
         private alertService: AlertService,
         private projectService: ProjectService,
         private eventManager: EventManager,
+        private templateService : TemplateService,
         private router: Router
     ) {
         this.jhiLanguageService.setLocations(['project', 'sTATEENUM']);
     }
 
+    checkedTemplates(value, event) {
+        console.log(value + "---" + event.target.checked);
+        if (event.target.checked === true) {
+            this.values.push(value);
+        }
+        else if (event.target.checked === false) {
+            let indexx = this.values.indexOf(value);
+            this.values.splice(indexx,1)
+        }
+        console.log(this.values)
+    }
+
     ngOnInit() {
         this.isSaving = false;
         this.authorities = ['ROLE_USER', 'ROLE_ADMIN'];
+        this.templateService.query().subscribe(
+            (res: Response) => {
+                this.templates = res.json();
+            },
+            (res: Response) => this.onError(res.json())
+        );
     }
 
     clear () {
@@ -44,6 +67,7 @@ export class ProjectDialogComponent implements OnInit {
 
     save () {
         this.isSaving = true;
+        this.project.templateId = this.values;
         if (this.project.id !== undefined) {
             this.projectService.update(this.project)
                 .subscribe((res: any) => this.onSaveSuccess(res), (res: Response) => this.onSaveError(res.json()));

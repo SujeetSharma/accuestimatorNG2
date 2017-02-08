@@ -20,13 +20,13 @@
            <!-- <th><span jhiTranslate="global.field.id">ID</span></th>-->
             <th><span jhiTranslate="accuestimatorNg2App.taskCategory.name">Name</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.taskCategory.type">Type</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.taskCategory.description">Description</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.taskCategory.version">Version</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.taskCategory.state">State</span></th>
            <!-- <th><span jhiTranslate="accuestimatorNg2App.taskCategory.createdby">Createdby</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.taskCategory.createdon">Createdon</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.taskCategory.modifiedby">Modifiedby</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.taskCategory.modifiedon">Modifiedon</span></th> -->
-            <th><span jhiTranslate="accuestimatorNg2App.taskCategory.description">Description</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.taskCategory.active">Active</span></th>
             <th></th>
             </tr>
@@ -36,13 +36,13 @@
                 <!--<td><a [routerLink]="['../taskCategory', taskCategory.id ]" >{{taskCategory.id}}</a></td>-->
                 <td>{{taskCategory.name}}</td>
                 <td jhiTranslate="{{'accuestimatorNg2App.TYPEENUM.' + taskCategory.type}}">{{taskCategory.type}}</td>
+                <td>{{taskCategory.description}}</td>
                 <td>{{taskCategory.version}}</td>
                 <td jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + taskCategory.state}}">{{taskCategory.state}}</td>
                 <!--<td>{{taskCategory.createdby}}</td>
                 <td>{{taskCategory.createdon | date:'medium'}}</td>
                 <td>{{taskCategory.modifiedby}}</td>
                 <td>{{taskCategory.modifiedon | date:'medium'}}</td>-->
-                <td>{{taskCategory.description}}</td>
                 <td>{{taskCategory.active}}</td>
                 <td class="text-xs-right">
                     <div class="btn-group flex-btn-group-container">

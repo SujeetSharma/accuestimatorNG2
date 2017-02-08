@@ -43,8 +43,8 @@ public class TemplateResourceIntTest {
     private static final Boolean DEFAULT_ACTIVE = false;
     private static final Boolean UPDATED_ACTIVE = true;
 
-    private static final String DEFAULT_FACTOR_TASK_ID = "AAAAAAAAAA";
-    private static final String UPDATED_FACTOR_TASK_ID = "BBBBBBBBBB";
+    private static final String[] DEFAULT_FACTOR_TASK_ID = {"A","B","C"};
+    private static final String[] UPDATED_FACTOR_TASK_ID = {"1","2","3"};
 
     private static final String DEFAULT_VERSION = "AAAAAAAAAA";
     private static final String UPDATED_VERSION = "BBBBBBBBBB";

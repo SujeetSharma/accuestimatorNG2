@@ -17,32 +17,33 @@
         <table class="table table-striped">
             <thead>
             <tr>
-            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span >Name</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.template.active">Active</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.template.factorTaskId">Factor Task Id</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.template.version">Version</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.template.state">State</span></th>
-            <th><span jhiTranslate="accuestimatorNg2App.template.createdby">Createdby</span></th>
-            <th><span jhiTranslate="accuestimatorNg2App.template.createdon">Createdon</span></th>
+            <!--<th><span jhiTranslate="accuestimatorNg2App.template.createdby">Createdby</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.template.createdon">Createdon</span></th>-->
             <th><span jhiTranslate="accuestimatorNg2App.template.referencedFrom">Referenced From</span></th>
-            <th><span jhiTranslate="accuestimatorNg2App.template.modifiedby">Modifiedby</span></th>
-            <th><span jhiTranslate="accuestimatorNg2App.template.modifiedon">Modifiedon</span></th>
+           <!-- <th><span jhiTranslate="accuestimatorNg2App.template.modifiedby">Modifiedby</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.template.modifiedon">Modifiedon</span></th>-->
             <th><span jhiTranslate="accuestimatorNg2App.template.description">Description</span></th>
             <th></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let template of templates ;trackBy: trackId">
-                <td><a [routerLink]="['../template', template.id ]" >{{template.id}}</a></td>
+               <!-- <td><a [routerLink]="['../template', template.id ]" >{{template.id}}</a></td>-->
+                <td>{{template.name}}</td>
                 <td>{{template.active}}</td>
                 <td>{{template.factorTaskId}}</td>
                 <td>{{template.version}}</td>
                 <td jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + template.state}}">{{template.state}}</td>
-                <td>{{template.createdby}}</td>
-                <td>{{template.createdon | date:'medium'}}</td>
+               <!-- <td>{{template.createdby}}</td>
+                <td>{{template.createdon | date:'medium'}}</td>-->
                 <td>{{template.referencedFrom}}</td>
-                <td>{{template.modifiedby}}</td>
-                <td>{{template.modifiedon | date:'medium'}}</td>
+                <!--<td>{{template.modifiedby}}</td>
+                <td>{{template.modifiedon | date:'medium'}}</td>-->
                 <td>{{template.description}}</td>
                 <td class="text-xs-right">
                     <div class="btn-group flex-btn-group-container">

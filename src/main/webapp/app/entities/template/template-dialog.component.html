@@ -27,6 +27,37 @@
         </div>
     </div>
         <div class="form-group">
+            <label class="form-control-label" for="field_description">Select F vs T [todo]</label>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th><span >Applicable</span></th>
+                        <th><span >Factor</span></th>
+                        <th><span >Category</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let ftmapping of factorsTaskMapping ;trackBy: trackId">
+                        <td><input type="checkbox" class="form-control" value="{{ftmapping.id}}" (change)="checkedFactorsTasks(ftmapping.id, $event)"/> </td>
+                        <td>{{ftmapping.factor}} </td>
+                        <td>{{ftmapping.task}} </td>
+                    </tr>
+                </tbody>
+            </table>
+       </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.template.name" for="field_name">Name</label>
+    <input type="text" class="form-control" name="name" id="field_name"
+           [(ngModel)]="template.name"
+    required />
+    <div [hidden]="!(editForm.controls.name?.dirty && editForm.controls.name?.invalid)">
+        <small class="form-text text-danger"
+           [hidden]="!editForm.controls.name?.errors?.required" jhiTranslate="entity.validation.required">
+            This field is required.
+        </small>
+        </div>
+    </div>
+        <div class="form-group">
         <label class="form-control-label" jhiTranslate="accuestimatorNg2App.template.factorTaskId" for="field_factorTaskId">Factor Task Id</label>
     <input type="text" class="form-control" name="factorTaskId" id="field_factorTaskId"
            [(ngModel)]="template.factorTaskId"
@@ -67,7 +98,7 @@
         </small>
         </div>
     </div>
-        <div class="form-group">
+      <!--  <div class="form-group">
         <label class="form-control-label" jhiTranslate="accuestimatorNg2App.template.createdby" for="field_createdby">Createdby</label>
     <input type="text" class="form-control" name="createdby" id="field_createdby"
            [(ngModel)]="template.createdby"
@@ -104,7 +135,7 @@
                         <button type="button" class="btn btn-default" (click)="modifiedonDp.open()"><i class="fa fa-calendar"></i></button>
                     </span>
     </div>
-    </div>
+    </div> -->
         <div class="form-group">
         <label class="form-control-label" jhiTranslate="accuestimatorNg2App.template.description" for="field_description">Description</label>
     <input type="text" class="form-control" name="description" id="field_description"

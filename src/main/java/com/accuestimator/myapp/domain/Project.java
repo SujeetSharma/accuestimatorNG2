@@ -57,6 +57,23 @@ public class Project implements Serializable {
     @Field("modifiedon")
     private ZonedDateTime modifiedon;
 
+    @NotNull
+    @Field("templateId")
+    private String[] templateId;
+
+    public String[] getTemplateId() {
+        return templateId;
+    }
+
+    public Project name(String[] templateId) {
+        this.templateId = templateId;
+        return this;
+    }
+
+    public void setTemplateId(String[] templateId) {
+        this.templateId = templateId;
+    }
+
     public String getId() {
         return id;
     }

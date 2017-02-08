@@ -16,6 +16,7 @@
             "detail": {
                 "title": "Template"
             },
+            "name": "Name",
             "active": "Active",
             "factorTaskId": "Factor Task Id",
             "version": "Version",

@@ -12,6 +12,7 @@ export class ProjectPopupService {
         private projectService: ProjectService
     ) {}
 
+
     open (component: Component, id?: number | any): NgbModalRef {
         if (this.isOpen) {
             return;

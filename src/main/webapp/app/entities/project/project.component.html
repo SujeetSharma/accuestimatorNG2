@@ -17,33 +17,35 @@
         <table class="table table-striped">
             <thead>
             <tr>
-            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <!--<th><span jhiTranslate="global.field.id">ID</span></th>-->
             <th><span jhiTranslate="accuestimatorNg2App.project.name">Name</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.project.description">Description</span></th>
+            <th><span>Template</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.project.active">Active</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.project.version">Version</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.project.state">State</span></th>
-            <th><span jhiTranslate="accuestimatorNg2App.project.createdby">Createdby</span></th>
+           <!-- <th><span jhiTranslate="accuestimatorNg2App.project.createdby">Createdby</span></th>-->
             <th><span jhiTranslate="accuestimatorNg2App.project.referencedFrom">Referenced From</span></th>
-            <th><span jhiTranslate="accuestimatorNg2App.project.createdon">Createdon</span></th>
+           <!-- <th><span jhiTranslate="accuestimatorNg2App.project.createdon">Createdon</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.project.modifiedby">Modifiedby</span></th>
-            <th><span jhiTranslate="accuestimatorNg2App.project.modifiedon">Modifiedon</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.project.modifiedon">Modifiedon</span></th>-->
             <th></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let project of projects ;trackBy: trackId">
-                <td><a [routerLink]="['../project', project.id ]" >{{project.id}}</a></td>
+                <!--<td><a [routerLink]="['../project', project.id ]" >{{project.id}}</a></td>-->
                 <td>{{project.name}}</td>
                 <td>{{project.description}}</td>
+                <td>{{project.templateId}}</td>
                 <td>{{project.active}}</td>
                 <td>{{project.version}}</td>
                 <td jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + project.state}}">{{project.state}}</td>
-                <td>{{project.createdby}}</td>
+               <!-- <td>{{project.createdby}}</td>-->
                 <td>{{project.referencedFrom}}</td>
-                <td>{{project.createdon | date:'medium'}}</td>
+                <!--<td>{{project.createdon | date:'medium'}}</td>
                 <td>{{project.modifiedby}}</td>
-                <td>{{project.modifiedon | date:'medium'}}</td>
+                <td>{{project.modifiedon | date:'medium'}}</td>-->
                 <td class="text-xs-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"
