@@ -8,6 +8,7 @@ import { FactorsTaskMapping } from './factors-task-mapping.model';
 import { FactorsTaskMappingService } from './factors-task-mapping.service';
 import { ITEMS_PER_PAGE, Principal } from '../../shared';
 import { PaginationConfig } from '../../blocks/config/uib-pagination.config';
+import {StorageService} from '../shared/storage.service';
 
 @Component({
     selector: 'jhi-factors-task-mapping',
@@ -23,9 +24,10 @@ export class FactorsTaskMappingComponent implements OnInit {
         private factorsTaskMappingService: FactorsTaskMappingService,
         private alertService: AlertService,
         private eventManager: EventManager,
-        private principal: Principal
+        private principal: Principal,
+        private storageService : StorageService
     ) {
-        this.jhiLanguageService.setLocations(['factorsTaskMapping', 'sTATEENUM']);
+        this.jhiLanguageService.setLocations(['factorsTaskMapping', 'sTATEENUM', 'eSTTYPEENUM']);
     }
 
     loadAll() {
@@ -37,6 +39,12 @@ export class FactorsTaskMappingComponent implements OnInit {
             (res: Response) => this.onError(res.json())
         );
     }
+
+    setFTMappingInfo(factorCategory: string, taskCategory: string)
+    {
+         this.storageService.setFTMappingDetails(factorCategory, taskCategory);
+    }
+    
     ngOnInit() {
         this.loadAll();
         this.principal.identity().then((account) => {

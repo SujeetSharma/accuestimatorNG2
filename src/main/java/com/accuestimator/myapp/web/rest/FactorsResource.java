@@ -104,6 +104,20 @@ public class FactorsResource {
     }
 
     /**
+     * GET  /factors/ByCat/:catid : get the "id" factors.
+     *
+     * @param id the id of the factors to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the factors, or with status 404 (Not Found)
+     */
+    @GetMapping("/factors/ByCat/{catid}")
+    @Timed
+    public List<Factors> getFactorsByCat(@PathVariable String catid) {
+        log.debug("REST request to get Factors : {}", catid);
+        List<Factors> factors = factorsRepository.findOneByCategory(catid);
+        return factors;
+    }
+
+    /**
      * DELETE  /factors/:id : delete the "id" factors.
      *
      * @param id the id of the factors to delete

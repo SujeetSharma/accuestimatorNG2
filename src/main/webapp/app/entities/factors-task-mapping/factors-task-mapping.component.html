@@ -19,11 +19,12 @@
             <tr>
            <!-- <th><span jhiTranslate="global.field.id">ID</span></th> -->
             <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.taskCategory">Task Category</span></th>
-             <th>   <span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.task">Task</span></th>
-            <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.factor">Factor</span></th>
+            <!-- <th>   <span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.task">Task</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.factor">Factor</span></th>-->
              <th>   <span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.factorCategory">Factor Category</span></th>
-            <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.formula">Formula</span></th>
-            <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.value">Value</span></th>
+            <!--<th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.formula">Formula</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.value">Value</span></th>-->
+            <th><span>ESTIMATION TYPE</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.version">Version</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.state">State</span></th>
            <!-- <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.createdby">Createdby</span></th>
@@ -39,12 +40,13 @@
             <tr *ngFor="let factorsTaskMapping of factorsTaskMappings ;trackBy: trackId">
                <!-- <td><a [routerLink]="['../factorsTaskMapping', factorsTaskMapping.id ]" >{{factorsTaskMapping.id}}</a></td>-->
                 <td>{{factorsTaskMapping.taskCategory}}</td>
-                <td>{{factorsTaskMapping.task}}</td>
-                <td>{{factorsTaskMapping.factor}}</td>
+               <!-- <td>{{factorsTaskMapping.task}}</td>
+                <td>{{factorsTaskMapping.factor}}</td>-->
                 <td>{{factorsTaskMapping.factorCategory}}</td>
-                <td>{{factorsTaskMapping.formula}}</td>
-                <td>{{factorsTaskMapping.value}}</td>
+                <!--<td>{{factorsTaskMapping.formula}}</td>
+                <td>{{factorsTaskMapping.value}}</td>-->
                 <td>{{factorsTaskMapping.version}}</td>
+                <td >{{factorsTaskMapping.esttype}}</td>
                 <td jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + factorsTaskMapping.state}}">{{factorsTaskMapping.state}}</td>
                 <!--<td>{{factorsTaskMapping.createdby}}</td>
                 <td>{{factorsTaskMapping.createdon | date:'medium'}}</td>
@@ -58,19 +60,22 @@
                                 [routerLink]="['../factors-task-mapping', factorsTaskMapping.id ]" 
                                 class="btn btn-info btn-sm">
                             <span class="fa fa-eye"></span>
-                            <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.view"></span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/', { outlets: { popup: 'factorsTaskMapping-edit/'+ factorsTaskMapping.id } }]"
                                 class="btn btn-primary btn-sm">
                             <span class="fa fa-pencil"></span>
-                            <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.edit"></span>
                         </button>
                         <button type="submit"
                                 [routerLink]="['/', { outlets: { popup: 'factorsTaskMapping-delete/'+ factorsTaskMapping.id } }]"
                                 class="btn btn-danger btn-sm">
                             <span class="fa fa-remove"></span>
-                            <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.delete"></span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'factorsTaskMapping-baseline' } }]"
+                                 (click)="setFTMappingInfo(factorsTaskMapping.factorCategory,factorsTaskMapping.taskCategory)"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
                         </button>
                     </div>
                 </td>

@@ -1,0 +1,40 @@
+
+
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+    <div class="modal-header">
+        <h4 class="modal-title" id="myFactorsTaskMappingLabel" >Baseline estimates</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+<!--Start -->
+
+    <div class="table-responsive" >
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th *ngFor="let factor of factors ;trackBy: trackId">{{factor.name}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let task of tasks ;trackBy: trackId">
+                <!-- <td><a [routerLink]="['../factorsTaskMapping', factorsTaskMapping.id ]" >{{factorsTaskMapping.id}}</a></td>-->
+                    <td>{{task.name}}</td>
+                    <td *ngFor="let factor of factors ;trackBy: trackId">
+                            <input type="text" class="form-control" name="points" id="points_description"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+<!-- End-->
+    </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

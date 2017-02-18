@@ -41,6 +41,18 @@ export class FactorsService {
         });
     }
 
+    findByCat(id: number | any): Observable<Factors[]> {
+        return this.http.get(`${this.resourceUrl}/ByCat/${id}`).map((res: Response) => {
+            let jsonResponse = res.json();
+            for (let i = 0; i < jsonResponse.length; i++) {
+                jsonResponse[i].createdon = this.dateUtils.convertDateTimeFromServer(jsonResponse[i].createdon);
+                jsonResponse[i].modifiedon = this.dateUtils.convertDateTimeFromServer(jsonResponse[i].modifiedon);
+            }   
+        return jsonResponse;
+        });
+        //return res;
+    }
+
     private convertResponse(res: any): any {
         let jsonResponse = res.json();
         for (let i = 0; i < jsonResponse.length; i++) {

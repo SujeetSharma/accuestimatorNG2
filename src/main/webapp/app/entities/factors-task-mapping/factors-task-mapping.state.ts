@@ -7,6 +7,7 @@ import { PaginationUtil } from 'ng-jhipster';
 import { FactorsTaskMappingComponent } from './factors-task-mapping.component';
 import { FactorsTaskMappingDetailComponent } from './factors-task-mapping-detail.component';
 import { FactorsTaskMappingPopupComponent } from './factors-task-mapping-dialog.component';
+import {FactorsTaskMappingBaselinePopupComponent} from './factors-task-mapping-baseline.component'
 import { FactorsTaskMappingDeletePopupComponent } from './factors-task-mapping-delete-dialog.component';
 
 import { Principal } from '../../shared';
@@ -73,5 +74,15 @@ export const factorsTaskMappingPopupRoute: Routes = [
         pageTitle: 'accuestimatorNg2App.factorsTaskMapping.home.title'
     },
     outlet: 'popup'
+  },
+  {
+    path: 'factorsTaskMapping-baseline',
+    component: FactorsTaskMappingBaselinePopupComponent,
+    data: {
+        authorities: ['ROLE_USER'],
+        pageTitle: 'accuestimatorNg2App.factorsTaskMapping.home.title'
+    },
+    outlet: 'popup'
   }
+
 ];

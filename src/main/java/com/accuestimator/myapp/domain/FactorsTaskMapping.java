@@ -10,6 +10,7 @@ import java.time.ZonedDateTime;
 import java.util.Objects;
 
 import com.accuestimator.myapp.domain.enumeration.STATEENUM;
+import com.accuestimator.myapp.domain.enumeration.ESTTYPEENUM;
 
 /**
  * A FactorsTaskMapping.
@@ -28,24 +29,8 @@ public class FactorsTaskMapping implements Serializable {
     private String taskCategory;
 
     @NotNull
-    @Field("task")
-    private String task;
-
-    @NotNull
-    @Field("factor")
-    private String factor;
-
-    @NotNull
     @Field("factor_category")
     private String factorCategory;
-
-    @NotNull
-    @Field("formula")
-    private String formula;
-
-    @NotNull
-    @Field("value")
-    private Float value;
 
     @NotNull
     @Field("version")
@@ -54,6 +39,10 @@ public class FactorsTaskMapping implements Serializable {
     @NotNull
     @Field("state")
     private STATEENUM state;
+
+    @NotNull
+    @Field("esttype")
+    private ESTTYPEENUM esttype;
 
     @Field("createdby")
     private String createdby;
@@ -95,32 +84,6 @@ public class FactorsTaskMapping implements Serializable {
         this.taskCategory = taskCategory;
     }
 
-    public String getTask() {
-        return task;
-    }
-
-    public FactorsTaskMapping task(String task) {
-        this.task = task;
-        return this;
-    }
-
-    public void setTask(String task) {
-        this.task = task;
-    }
-
-    public String getFactor() {
-        return factor;
-    }
-
-    public FactorsTaskMapping factor(String factor) {
-        this.factor = factor;
-        return this;
-    }
-
-    public void setFactor(String factor) {
-        this.factor = factor;
-    }
-
     public String getFactorCategory() {
         return factorCategory;
     }
@@ -132,32 +95,6 @@ public class FactorsTaskMapping implements Serializable {
 
     public void setFactorCategory(String factorCategory) {
         this.factorCategory = factorCategory;
-    }
-
-    public String getFormula() {
-        return formula;
-    }
-
-    public FactorsTaskMapping formula(String formula) {
-        this.formula = formula;
-        return this;
-    }
-
-    public void setFormula(String formula) {
-        this.formula = formula;
-    }
-
-    public Float getValue() {
-        return value;
-    }
-
-    public FactorsTaskMapping value(Float value) {
-        this.value = value;
-        return this;
-    }
-
-    public void setValue(Float value) {
-        this.value = value;
     }
 
     public String getVersion() {
@@ -184,6 +121,19 @@ public class FactorsTaskMapping implements Serializable {
 
     public void setState(STATEENUM state) {
         this.state = state;
+    }
+
+    public ESTTYPEENUM getEsttype() {
+        return esttype;
+    }
+
+    public FactorsTaskMapping esttype(ESTTYPEENUM esttype) {
+        this.esttype = esttype;
+        return this;
+    }
+
+    public void setEsttype(ESTTYPEENUM esttype) {
+        this.esttype = esttype;
     }
 
     public String getCreatedby() {
@@ -289,11 +239,7 @@ public class FactorsTaskMapping implements Serializable {
         return "FactorsTaskMapping{" +
             "id=" + id +
             ", taskCategory='" + taskCategory + "'" +
-            ", task='" + task + "'" +
-            ", factor='" + factor + "'" +
             ", factorCategory='" + factorCategory + "'" +
-            ", formula='" + formula + "'" +
-            ", value='" + value + "'" +
             ", version='" + version + "'" +
             ", state='" + state + "'" +
             ", createdby='" + createdby + "'" +

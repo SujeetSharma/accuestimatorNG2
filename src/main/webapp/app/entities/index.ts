@@ -53,6 +53,7 @@ export * from './tasks/tasks-detail.component';
 export * from './tasks/tasks.component';
 export * from './tasks/tasks.state';
 export * from './factors-task-mapping/factors-task-mapping-dialog.component';
+export * from './factors-task-mapping/factors-task-mapping-baseline.component';
 export * from './factors-task-mapping/factors-task-mapping-delete-dialog.component';
 export * from './factors-task-mapping/factors-task-mapping-detail.component';
 export * from './factors-task-mapping/factors-task-mapping.component';

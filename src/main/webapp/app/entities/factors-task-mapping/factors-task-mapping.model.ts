@@ -7,16 +7,17 @@ const enum STATEENUM {
     'APPROVED'
 };
 
+const enum ESTTYPEENUM {
+    'PERT',
+    'AGILE',
+    'HOURS'
+};
 
 export class FactorsTaskMapping {
     constructor(
         public id?: string,
         public taskCategory?: string,
-        public task?: string,
-        public factor?: string,
         public factorCategory?: string,
-        public formula?: string,
-        public value?: number,
         public version?: string,
         public state?: STATEENUM,
         public createdby?: string,
@@ -24,6 +25,7 @@ export class FactorsTaskMapping {
         public modifiedby?: string,
         public modifiedon?: any,
         public description?: string,
+        public esttype?:ESTTYPEENUM,
         public active?: boolean,
     ) { }
 }

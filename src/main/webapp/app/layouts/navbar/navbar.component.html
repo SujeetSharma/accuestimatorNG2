@@ -16,14 +16,7 @@
                     <span class="hidden-sm-down" jhiTranslate="global.menu.home">Home</span>
                 </a>
             </li>
-            <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" routerLink="estimator" (click)="collapseNavbar()">
-                    <i class="fa fa-estimator" aria-hidden="true"></i>
-                    <span class="hidden-sm-down" jhiTranslate="global.menu.estimator">Estimator</span>
-                </a>
-            </li>
-            <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
-            <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer">
+          <!--  <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer">
                 <a class="nav-link dropdown-toggle" routerLinkActive="active" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
                     <span>
                         <i class="fa fa-th-list" aria-hidden="true"></i>
@@ -40,24 +33,24 @@
                             <span jhiTranslate="global.menu.entities.factorCategory">Factor Category</span>
                         </a>
                     </li>
-                    <!--<li uiSrefActive="active">
+                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="factors" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.factors">Factors</span>
                         </a>
-                    </li>-->
+                    </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="task-category" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.taskCategory">Task Category</span>
                         </a>
                     </li>
-                   <!-- <li uiSrefActive="active">
+                    <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="tasks" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
                             <span jhiTranslate="global.menu.entities.tasks">Tasks</span>
                         </a>
-                    </li>-->
+                    </li>
                     <li uiSrefActive="active">
                         <a class="dropdown-item" routerLink="factors-task-mapping" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
@@ -82,9 +75,8 @@
                             <span jhiTranslate="global.menu.entities.estimates">Estimates</span>
                         </a>
                     </li>
-                    <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </ul>
-            </li>
+            </li> -->
             <li *ngSwitchCase="true" jhiHasAuthority="ROLE_ADMIN" ngbDropdown class="nav-item dropdown pointer">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="admin-menu">
                     <span>

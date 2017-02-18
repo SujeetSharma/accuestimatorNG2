@@ -103,6 +103,20 @@ public class TasksResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(tasks));
     }
 
+      /**
+     * GET  /tasks/ByCat/:catid : get the "id" tasks.
+     *
+     * @param id the id of the tasks to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the tasks, or with status 404 (Not Found)
+     */
+    @GetMapping("/tasks/ByCat/{catid}")
+    @Timed
+    public List<Tasks> getTasksByCat(@PathVariable String catid) {
+        log.debug("REST request to get Tasks : {}", catid);
+        List<Tasks> tasks = tasksRepository.findOneByCategory(catid);
+        return tasks;
+    }
+
     /**
      * DELETE  /tasks/:id : delete the "id" tasks.
      *
