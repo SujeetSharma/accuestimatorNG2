@@ -16,9 +16,12 @@
         </div>
         <div class="form-group">
         <label class="form-control-label" jhiTranslate="accuestimatorNg2App.projectUserMapping.userid" for="field_userid">Userid</label>
-    <input type="text" class="form-control" name="userid" id="field_userid"
+    <!--<input type="text" class="form-control" name="userid" id="field_userid"
            [(ngModel)]="projectUserMapping.userid"
-    required />
+    required />-->
+     <select required name="userid" class="form-control" id="field_userid" [(ngModel)]="projectUserMapping.userid">
+         <option *ngFor="let user of users" [ngValue]="user.id">{{user.firstName}} {{user.lastName}}</option>
+     </select>
     <div [hidden]="!(editForm.controls.userid?.dirty && editForm.controls.userid?.invalid)">
         <small class="form-text text-danger"
            [hidden]="!editForm.controls.userid?.errors?.required" jhiTranslate="entity.validation.required">
@@ -28,9 +31,12 @@
     </div>
         <div class="form-group">
         <label class="form-control-label" jhiTranslate="accuestimatorNg2App.projectUserMapping.projectid" for="field_projectid">Projectid</label>
-    <input type="text" class="form-control" name="projectid" id="field_projectid"
+    <!--<input type="text" class="form-control" name="projectid" id="field_projectid"
            [(ngModel)]="projectUserMapping.projectid"
-    required />
+    required />-->
+    <select required name="projectid" class="form-control" id="field_projectid" [(ngModel)]="projectUserMapping.projectid">
+         <option *ngFor="let project of projects" [ngValue]="project.id">{{project.name}}</option>
+     </select>
     <div [hidden]="!(editForm.controls.projectid?.dirty && editForm.controls.projectid?.invalid)">
         <small class="form-text text-danger"
            [hidden]="!editForm.controls.projectid?.errors?.required" jhiTranslate="entity.validation.required">
@@ -79,7 +85,7 @@
         </small>
         </div>
     </div>
-        <div class="form-group">
+       <!-- <div class="form-group">
         <label class="form-control-label" jhiTranslate="accuestimatorNg2App.projectUserMapping.createdby" for="field_createdby">Createdby</label>
     <input type="text" class="form-control" name="createdby" id="field_createdby"
            [(ngModel)]="projectUserMapping.createdby"
@@ -110,7 +116,7 @@
                         <button type="button" class="btn btn-default" (click)="modifiedonDp.open()"><i class="fa fa-calendar"></i></button>
                     </span>
     </div>
-    </div>
+    </div> -->
 
     </div>
     <div class="modal-footer">

@@ -8,8 +8,10 @@ import { EventManager, AlertService, JhiLanguageService } from 'ng-jhipster';
 import { ProjectUserMapping } from './project-user-mapping.model';
 import { ProjectUserMappingPopupService } from './project-user-mapping-popup.service';
 import { ProjectUserMappingService } from './project-user-mapping.service';
-
-
+import { ProjectService} from '../project/project.service';
+import { Project} from '../project/project.model';
+import { UserService} from '../../admin/user-management/user.service';
+import { User} from '../../admin/user-management/user.model';
 // TODO replace ng-file-upload dependency by an ng2 depedency
 // TODO Find a better way to format dates so that it works with NgbDatePicker
 @Component({
@@ -21,13 +23,18 @@ export class ProjectUserMappingDialogComponent implements OnInit {
     projectUserMapping: ProjectUserMapping;
     authorities: any[];
     isSaving: boolean;
+    projects: Project[];
+    users: User[];
+
     constructor(
         private jhiLanguageService: JhiLanguageService,
         public activeModal: NgbActiveModal,
         private alertService: AlertService,
         private projectUserMappingService: ProjectUserMappingService,
         private eventManager: EventManager,
-        private router: Router
+        private router: Router,
+        private projectService: ProjectService,
+        private userService: UserService,
     ) {
         this.jhiLanguageService.setLocations(['projectUserMapping', 'sTATEENUM']);
     }
@@ -35,6 +42,17 @@ export class ProjectUserMappingDialogComponent implements OnInit {
     ngOnInit() {
         this.isSaving = false;
         this.authorities = ['ROLE_USER', 'ROLE_ADMIN'];
+        this.projectService.query().subscribe(
+            (res: Response) => {
+                this.projects = res.json();
+                //this.searchQuery = null;
+            },
+            (res: Response) => this.onError(res.json())
+        );
+        this.userService.query().subscribe(
+            (res: Response) => { this.users = res.json()},
+            (res: Response) => this.onError(res.json())
+        );
     }
 
     clear () {

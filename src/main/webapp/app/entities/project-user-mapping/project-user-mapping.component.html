@@ -17,31 +17,31 @@
         <table class="table table-striped">
             <thead>
             <tr>
-            <th><span jhiTranslate="global.field.id">ID</span></th>
+           <!-- <th><span jhiTranslate="global.field.id">ID</span></th>-->
             <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.userid">Userid</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.projectid">Projectid</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.active">Active</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.version">Version</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.state">State</span></th>
-            <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.createdby">Createdby</span></th>
+           <!-- <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.createdby">Createdby</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.createdon">Createdon</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.modifiedby">Modifiedby</span></th>
-            <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.modifiedon">Modifiedon</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.modifiedon">Modifiedon</span></th>-->
             <th></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let projectUserMapping of projectUserMappings ;trackBy: trackId">
-                <td><a [routerLink]="['../projectUserMapping', projectUserMapping.id ]" >{{projectUserMapping.id}}</a></td>
+               <!-- <td><a [routerLink]="['../projectUserMapping', projectUserMapping.id ]" >{{projectUserMapping.id}}</a></td>-->
                 <td>{{projectUserMapping.userid}}</td>
                 <td>{{projectUserMapping.projectid}}</td>
                 <td>{{projectUserMapping.active}}</td>
                 <td>{{projectUserMapping.version}}</td>
                 <td jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + projectUserMapping.state}}">{{projectUserMapping.state}}</td>
-                <td>{{projectUserMapping.createdby}}</td>
+                <!--<td>{{projectUserMapping.createdby}}</td>
                 <td>{{projectUserMapping.createdon | date:'medium'}}</td>
                 <td>{{projectUserMapping.modifiedby}}</td>
-                <td>{{projectUserMapping.modifiedon | date:'medium'}}</td>
+                <td>{{projectUserMapping.modifiedon | date:'medium'}}</td>-->
                 <td class="text-xs-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

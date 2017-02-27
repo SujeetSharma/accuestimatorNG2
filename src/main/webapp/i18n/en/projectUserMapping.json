@@ -3,7 +3,7 @@
         "projectUserMapping" : {
             "home": {
                 "title": "Project User Mappings",
-                "createLabel": "Create a new Project User Mapping",
+                "createLabel": "Create new",
                 "createOrEditLabel": "Create or edit a Project User Mapping",
                 "search": "Search for Project User Mapping"
             },
