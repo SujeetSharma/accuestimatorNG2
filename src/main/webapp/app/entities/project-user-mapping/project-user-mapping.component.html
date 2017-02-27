@@ -1,0 +1,71 @@
+<div>
+    <h2><span jhiTranslate="accuestimatorNg2App.projectUserMapping.home.title">Project User Mappings</span>
+        <button class="btn btn-primary float-xs-right" [routerLink]="['/', { outlets: { popup: ['projectUserMapping-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="accuestimatorNg2App.projectUserMapping.home.createLabel">
+            Create new Project User Mapping
+            </span>
+        </button></h2>
+    <jhi-alert></jhi-alert>
+
+    <div class="container-fluid">
+        <div class="row">
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="projectUserMappings">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.userid">Userid</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.projectid">Projectid</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.active">Active</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.version">Version</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.state">State</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.createdby">Createdby</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.createdon">Createdon</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.modifiedby">Modifiedby</span></th>
+            <th><span jhiTranslate="accuestimatorNg2App.projectUserMapping.modifiedon">Modifiedon</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let projectUserMapping of projectUserMappings ;trackBy: trackId">
+                <td><a [routerLink]="['../projectUserMapping', projectUserMapping.id ]" >{{projectUserMapping.id}}</a></td>
+                <td>{{projectUserMapping.userid}}</td>
+                <td>{{projectUserMapping.projectid}}</td>
+                <td>{{projectUserMapping.active}}</td>
+                <td>{{projectUserMapping.version}}</td>
+                <td jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + projectUserMapping.state}}">{{projectUserMapping.state}}</td>
+                <td>{{projectUserMapping.createdby}}</td>
+                <td>{{projectUserMapping.createdon | date:'medium'}}</td>
+                <td>{{projectUserMapping.modifiedby}}</td>
+                <td>{{projectUserMapping.modifiedon | date:'medium'}}</td>
+                <td class="text-xs-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../project-user-mapping', projectUserMapping.id ]" 
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.view"></span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'projectUserMapping-edit/'+ projectUserMapping.id } }]"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.edit"></span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'projectUserMapping-delete/'+ projectUserMapping.id } }]"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.delete"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

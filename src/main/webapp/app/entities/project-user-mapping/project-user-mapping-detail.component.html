@@ -1,0 +1,56 @@
+
+<div *ngIf="projectUserMapping">
+    <h2><span jhiTranslate="accuestimatorNg2App.projectUserMapping.detail.title">Project User Mapping</span> {{projectUserMapping.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="accuestimatorNg2App.projectUserMapping.userid">Userid</span></dt>
+        <dd>
+            <span>{{projectUserMapping.userid}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectUserMapping.projectid">Projectid</span></dt>
+        <dd>
+            <span>{{projectUserMapping.projectid}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectUserMapping.active">Active</span></dt>
+        <dd>
+            <span>{{projectUserMapping.active}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectUserMapping.version">Version</span></dt>
+        <dd>
+            <span>{{projectUserMapping.version}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectUserMapping.state">State</span></dt>
+        <dd>
+            <span jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + projectUserMapping.state}}">{{projectUserMapping.state}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectUserMapping.createdby">Createdby</span></dt>
+        <dd>
+            <span>{{projectUserMapping.createdby}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectUserMapping.createdon">Createdon</span></dt>
+        <dd>
+            <span>{{projectUserMapping.createdon | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectUserMapping.modifiedby">Modifiedby</span></dt>
+        <dd>
+            <span>{{projectUserMapping.modifiedby}}</span>
+        </dd>
+        <dt><span jhiTranslate="accuestimatorNg2App.projectUserMapping.modifiedon">Modifiedon</span></dt>
+        <dd>
+            <span>{{projectUserMapping.modifiedon | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'projectUserMapping-edit/'+ projectUserMapping.id } }]"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

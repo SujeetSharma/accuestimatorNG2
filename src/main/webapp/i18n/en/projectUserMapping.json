@@ -1,0 +1,30 @@
+{
+    "accuestimatorNg2App": {
+        "projectUserMapping" : {
+            "home": {
+                "title": "Project User Mappings",
+                "createLabel": "Create a new Project User Mapping",
+                "createOrEditLabel": "Create or edit a Project User Mapping",
+                "search": "Search for Project User Mapping"
+            },
+            "created": "A new Project User Mapping is created with identifier {{ param }}",
+            "updated": "A Project User Mapping is updated with identifier {{ param }}",
+            "deleted": "A Project User Mapping is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Project User Mapping {{ id }}?"
+            },
+            "detail": {
+                "title": "Project User Mapping"
+            },
+            "userid": "Userid",
+            "projectid": "Projectid",
+            "active": "Active",
+            "version": "Version",
+            "state": "State",
+            "createdby": "Createdby",
+            "createdon": "Createdon",
+            "modifiedby": "Modifiedby",
+            "modifiedon": "Modifiedon"
+        }
+    }
+}

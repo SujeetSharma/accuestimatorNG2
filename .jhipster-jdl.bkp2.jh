@@ -1,0 +1,66 @@
+entity Template {
+    active Boolean required
+    factorTaskId String required,
+    version String required,
+    state STATEENUM required,
+    createdby String,
+    createdon ZonedDateTime ,
+    referencedFrom String,
+    modifiedby String ,
+    modifiedon ZonedDateTime ,
+    description String    
+}
+
+entity Project {
+    name String required,
+    description String,
+    active Boolean required,
+    version String required,
+    state STATEENUM required,
+    createdby String,
+    referencedFrom String,
+    createdon ZonedDateTime ,
+    modifiedby String ,
+    modifiedon ZonedDateTime      
+}
+
+entity ProjectTemplateMapping {
+    name String required,
+    description String,
+    projectId String required,
+    TemplateId String required,
+    active Boolean required,
+    version String required,
+    state STATEENUM required,
+    createdby String,
+    createdon ZonedDateTime ,
+    modifiedby String ,
+    modifiedon ZonedDateTime      
+}
+
+entity Estimates {
+    name String required,
+    description String,
+    projectId String required,
+    templateId String required,
+    taskId String required,
+    factorId String required,
+    type TYPEENUM required,
+	value Float required,
+    version String required,
+    state STATEENUM required,
+    referencedFrom String required,
+    createdby String,
+    createdon ZonedDateTime ,
+    modifiedby String,
+    modifiedon ZonedDateTime,
+    active Boolean required
+}
+
+enum STATEENUM {
+    DRAFT, INPROGRESS, COMPLETED, READY, INQUEUE, APPROVED
+}
+
+enum TYPEENUM {
+    TECHNICAL, MANAGEMENT, CODING, TESTING, DEPLOYMENT, REVIEW, REWORK, OTHERS
+}

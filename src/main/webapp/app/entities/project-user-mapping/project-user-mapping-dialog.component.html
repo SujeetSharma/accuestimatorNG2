@@ -1,0 +1,124 @@
+
+
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+        <h4 class="modal-title" id="myProjectUserMappingLabel" jhiTranslate="accuestimatorNg2App.projectUserMapping.home.createOrEditLabel">Create or edit a Project User Mapping</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!projectUserMapping.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="projectUserMapping.id" readonly />
+        </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.projectUserMapping.userid" for="field_userid">Userid</label>
+    <input type="text" class="form-control" name="userid" id="field_userid"
+           [(ngModel)]="projectUserMapping.userid"
+    required />
+    <div [hidden]="!(editForm.controls.userid?.dirty && editForm.controls.userid?.invalid)">
+        <small class="form-text text-danger"
+           [hidden]="!editForm.controls.userid?.errors?.required" jhiTranslate="entity.validation.required">
+            This field is required.
+        </small>
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.projectUserMapping.projectid" for="field_projectid">Projectid</label>
+    <input type="text" class="form-control" name="projectid" id="field_projectid"
+           [(ngModel)]="projectUserMapping.projectid"
+    required />
+    <div [hidden]="!(editForm.controls.projectid?.dirty && editForm.controls.projectid?.invalid)">
+        <small class="form-text text-danger"
+           [hidden]="!editForm.controls.projectid?.errors?.required" jhiTranslate="entity.validation.required">
+            This field is required.
+        </small>
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.projectUserMapping.active" for="field_active">Active</label>
+    <input type="checkbox" class="form-control" name="active" id="field_active"
+           [(ngModel)]="projectUserMapping.active"
+     />
+    <div [hidden]="!(editForm.controls.active?.dirty && editForm.controls.active?.invalid)">
+        <small class="form-text text-danger"
+           [hidden]="!editForm.controls.active?.errors?.required" jhiTranslate="entity.validation.required">
+            This field is required.
+        </small>
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.projectUserMapping.version" for="field_version">Version</label>
+    <input type="text" class="form-control" name="version" id="field_version"
+           [(ngModel)]="projectUserMapping.version"
+    required />
+    <div [hidden]="!(editForm.controls.version?.dirty && editForm.controls.version?.invalid)">
+        <small class="form-text text-danger"
+           [hidden]="!editForm.controls.version?.errors?.required" jhiTranslate="entity.validation.required">
+            This field is required.
+        </small>
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.projectUserMapping.state" for="field_state">State</label>
+        <select class="form-control" name="state" [(ngModel)]="projectUserMapping.state" id="field_state"  required>
+        <option value="DRAFT" jhiTranslate="accuestimatorNg2App.STATEENUM.DRAFT">DRAFT</option>
+        <option value="INPROGRESS" jhiTranslate="accuestimatorNg2App.STATEENUM.INPROGRESS">INPROGRESS</option>
+        <option value="COMPLETED" jhiTranslate="accuestimatorNg2App.STATEENUM.COMPLETED">COMPLETED</option>
+        <option value="READY" jhiTranslate="accuestimatorNg2App.STATEENUM.READY">READY</option>
+        <option value="INQUEUE" jhiTranslate="accuestimatorNg2App.STATEENUM.INQUEUE">INQUEUE</option>
+        <option value="APPROVED" jhiTranslate="accuestimatorNg2App.STATEENUM.APPROVED">APPROVED</option>
+        </select>
+    <div [hidden]="!(editForm.controls.state?.dirty && editForm.controls.state?.invalid)">
+        <small class="form-text text-danger"
+           [hidden]="!editForm.controls.state?.errors?.required" jhiTranslate="entity.validation.required">
+            This field is required.
+        </small>
+        </div>
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.projectUserMapping.createdby" for="field_createdby">Createdby</label>
+    <input type="text" class="form-control" name="createdby" id="field_createdby"
+           [(ngModel)]="projectUserMapping.createdby"
+     />
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.projectUserMapping.createdon" for="field_createdon">Createdon</label>
+        <div class="input-group">
+            <input id="field_createdon" type="text" class="form-control" name="createdon" ngbDatepicker #createdonDp="ngbDatepicker" [(ngModel)]="projectUserMapping.createdon"
+              />
+        <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" (click)="createdonDp.open()"><i class="fa fa-calendar"></i></button>
+                    </span>
+    </div>
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.projectUserMapping.modifiedby" for="field_modifiedby">Modifiedby</label>
+    <input type="text" class="form-control" name="modifiedby" id="field_modifiedby"
+           [(ngModel)]="projectUserMapping.modifiedby"
+     />
+    </div>
+        <div class="form-group">
+        <label class="form-control-label" jhiTranslate="accuestimatorNg2App.projectUserMapping.modifiedon" for="field_modifiedon">Modifiedon</label>
+        <div class="input-group">
+            <input id="field_modifiedon" type="text" class="form-control" name="modifiedon" ngbDatepicker #modifiedonDp="ngbDatepicker" [(ngModel)]="projectUserMapping.modifiedon"
+              />
+        <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" (click)="modifiedonDp.open()"><i class="fa fa-calendar"></i></button>
+                    </span>
+    </div>
+    </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

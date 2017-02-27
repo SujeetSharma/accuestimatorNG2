@@ -9,6 +9,7 @@ export * from './values/values.model';
 export * from './template/template.model';
 export * from './project/project.model';
 export * from './project-template-mapping/project-template-mapping.model';
+export * from './project-user-mapping/project-user-mapping.model';
 /* jhipster-needle-add-entity-to-index-model-export - JHipster will add entity model classes here */
 export * from './factor-category/factor-category-popup.service';
 export * from './factors/factors-popup.service';
@@ -20,6 +21,7 @@ export * from './values/values-popup.service';
 export * from './template/template-popup.service';
 export * from './project/project-popup.service';
 export * from './project-template-mapping/project-template-mapping-popup.service';
+export * from './project-user-mapping/project-user-mapping-popup.service';
 /* jhipster-needle-add-entity-to-index-popup-service-export - JHipster will add entity popup service classes here */
 export * from './factor-category/factor-category.service';
 export * from './factors/factors.service';
@@ -31,6 +33,7 @@ export * from './values/values.service';
 export * from './template/template.service';
 export * from './project/project.service';
 export * from './project-template-mapping/project-template-mapping.service';
+export * from './project-user-mapping/project-user-mapping.service';
 /* jhipster-needle-add-entity-to-index-service-export - JHipster will add entity service classes here */
 export * from './factor-category/factor-category-dialog.component';
 export * from './factor-category/factor-category-delete-dialog.component';
@@ -84,4 +87,14 @@ export * from './project-template-mapping/project-template-mapping-delete-dialog
 export * from './project-template-mapping/project-template-mapping-detail.component';
 export * from './project-template-mapping/project-template-mapping.component';
 export * from './project-template-mapping/project-template-mapping.state';
+export * from './factors-task-mapping/factors-task-mapping-dialog.component';
+export * from './factors-task-mapping/factors-task-mapping-delete-dialog.component';
+export * from './factors-task-mapping/factors-task-mapping-detail.component';
+export * from './factors-task-mapping/factors-task-mapping.component';
+export * from './factors-task-mapping/factors-task-mapping.state';
+export * from './project-user-mapping/project-user-mapping-dialog.component';
+export * from './project-user-mapping/project-user-mapping-delete-dialog.component';
+export * from './project-user-mapping/project-user-mapping-detail.component';
+export * from './project-user-mapping/project-user-mapping.component';
+export * from './project-user-mapping/project-user-mapping.state';
 /* jhipster-needle-add-entity-to-index-export - JHipster will add entity classes here */

@@ -113,11 +113,11 @@ public class FactorsTaskMappingResourceIntTest {
     public static FactorsTaskMapping createEntity() {
         FactorsTaskMapping factorsTaskMapping = new FactorsTaskMapping()
                 .taskCategory(DEFAULT_TASK_CATEGORY)
-                .task(DEFAULT_TASK)
-                .factor(DEFAULT_FACTOR)
+                //.task(DEFAULT_TASK)
+                //.factor(DEFAULT_FACTOR)
                 .factorCategory(DEFAULT_FACTOR_CATEGORY)
-                .formula(DEFAULT_FORMULA)
-                .value(DEFAULT_VALUE)
+                //.formula(DEFAULT_FORMULA)
+                //.value(DEFAULT_VALUE)
                 .version(DEFAULT_VERSION)
                 .state(DEFAULT_STATE)
                 .createdby(DEFAULT_CREATEDBY)
@@ -151,11 +151,11 @@ public class FactorsTaskMappingResourceIntTest {
         assertThat(factorsTaskMappingList).hasSize(databaseSizeBeforeCreate + 1);
         FactorsTaskMapping testFactorsTaskMapping = factorsTaskMappingList.get(factorsTaskMappingList.size() - 1);
         assertThat(testFactorsTaskMapping.getTaskCategory()).isEqualTo(DEFAULT_TASK_CATEGORY);
-        assertThat(testFactorsTaskMapping.getTask()).isEqualTo(DEFAULT_TASK);
-        assertThat(testFactorsTaskMapping.getFactor()).isEqualTo(DEFAULT_FACTOR);
+        //assertThat(testFactorsTaskMapping.getTask()).isEqualTo(DEFAULT_TASK);
+        //assertThat(testFactorsTaskMapping.getFactor()).isEqualTo(DEFAULT_FACTOR);
         assertThat(testFactorsTaskMapping.getFactorCategory()).isEqualTo(DEFAULT_FACTOR_CATEGORY);
-        assertThat(testFactorsTaskMapping.getFormula()).isEqualTo(DEFAULT_FORMULA);
-        assertThat(testFactorsTaskMapping.getValue()).isEqualTo(DEFAULT_VALUE);
+        //assertThat(testFactorsTaskMapping.getFormula()).isEqualTo(DEFAULT_FORMULA);
+        //assertThat(testFactorsTaskMapping.getValue()).isEqualTo(DEFAULT_VALUE);
         assertThat(testFactorsTaskMapping.getVersion()).isEqualTo(DEFAULT_VERSION);
         assertThat(testFactorsTaskMapping.getState()).isEqualTo(DEFAULT_STATE);
         assertThat(testFactorsTaskMapping.getCreatedby()).isEqualTo(DEFAULT_CREATEDBY);
@@ -206,7 +206,7 @@ public class FactorsTaskMappingResourceIntTest {
     public void checkTaskIsRequired() throws Exception {
         int databaseSizeBeforeTest = factorsTaskMappingRepository.findAll().size();
         // set the field null
-        factorsTaskMapping.setTask(null);
+        //factorsTaskMapping.setTask(null);
 
         // Create the FactorsTaskMapping, which fails.
 
@@ -223,7 +223,7 @@ public class FactorsTaskMappingResourceIntTest {
     public void checkFactorIsRequired() throws Exception {
         int databaseSizeBeforeTest = factorsTaskMappingRepository.findAll().size();
         // set the field null
-        factorsTaskMapping.setFactor(null);
+        //factorsTaskMapping.setFactor(null);
 
         // Create the FactorsTaskMapping, which fails.
 
@@ -257,7 +257,7 @@ public class FactorsTaskMappingResourceIntTest {
     public void checkFormulaIsRequired() throws Exception {
         int databaseSizeBeforeTest = factorsTaskMappingRepository.findAll().size();
         // set the field null
-        factorsTaskMapping.setFormula(null);
+        //factorsTaskMapping.setFormula(null);
 
         // Create the FactorsTaskMapping, which fails.
 
@@ -274,7 +274,7 @@ public class FactorsTaskMappingResourceIntTest {
     public void checkValueIsRequired() throws Exception {
         int databaseSizeBeforeTest = factorsTaskMappingRepository.findAll().size();
         // set the field null
-        factorsTaskMapping.setValue(null);
+        //factorsTaskMapping.setValue(null);
 
         // Create the FactorsTaskMapping, which fails.
 
@@ -383,7 +383,7 @@ public class FactorsTaskMappingResourceIntTest {
             .andExpect(jsonPath("$.version").value(DEFAULT_VERSION.toString()))
             .andExpect(jsonPath("$.state").value(DEFAULT_STATE.toString()))
             .andExpect(jsonPath("$.createdby").value(DEFAULT_CREATEDBY.toString()))
-            .andExpect(jsonPath("$.createdon").value(sameInstant(DEFAULT_CREATEDON)))
+            .andExpect(jsonPath("$.createdon").value(TestUtil.sameInstant(DEFAULT_CREATEDON)))
             .andExpect(jsonPath("$.modifiedby").value(DEFAULT_MODIFIEDBY.toString()))
             .andExpect(jsonPath("$.modifiedon").value(sameInstant(DEFAULT_MODIFIEDON)))
             .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()))
@@ -407,11 +407,11 @@ public class FactorsTaskMappingResourceIntTest {
         FactorsTaskMapping updatedFactorsTaskMapping = factorsTaskMappingRepository.findOne(factorsTaskMapping.getId());
         updatedFactorsTaskMapping
                 .taskCategory(UPDATED_TASK_CATEGORY)
-                .task(UPDATED_TASK)
-                .factor(UPDATED_FACTOR)
+                //.task(UPDATED_TASK)
+                //.factor(UPDATED_FACTOR)
                 .factorCategory(UPDATED_FACTOR_CATEGORY)
-                .formula(UPDATED_FORMULA)
-                .value(UPDATED_VALUE)
+                //.formula(UPDATED_FORMULA)
+                //.value(UPDATED_VALUE)
                 .version(UPDATED_VERSION)
                 .state(UPDATED_STATE)
                 .createdby(UPDATED_CREATEDBY)
@@ -431,11 +431,11 @@ public class FactorsTaskMappingResourceIntTest {
         assertThat(factorsTaskMappingList).hasSize(databaseSizeBeforeUpdate);
         FactorsTaskMapping testFactorsTaskMapping = factorsTaskMappingList.get(factorsTaskMappingList.size() - 1);
         assertThat(testFactorsTaskMapping.getTaskCategory()).isEqualTo(UPDATED_TASK_CATEGORY);
-        assertThat(testFactorsTaskMapping.getTask()).isEqualTo(UPDATED_TASK);
-        assertThat(testFactorsTaskMapping.getFactor()).isEqualTo(UPDATED_FACTOR);
+        //assertThat(testFactorsTaskMapping.getTask()).isEqualTo(UPDATED_TASK);
+        //assertThat(testFactorsTaskMapping.getFactor()).isEqualTo(UPDATED_FACTOR);
         assertThat(testFactorsTaskMapping.getFactorCategory()).isEqualTo(UPDATED_FACTOR_CATEGORY);
-        assertThat(testFactorsTaskMapping.getFormula()).isEqualTo(UPDATED_FORMULA);
-        assertThat(testFactorsTaskMapping.getValue()).isEqualTo(UPDATED_VALUE);
+        //assertThat(testFactorsTaskMapping.getFormula()).isEqualTo(UPDATED_FORMULA);
+        //assertThat(testFactorsTaskMapping.getValue()).isEqualTo(UPDATED_VALUE);
         assertThat(testFactorsTaskMapping.getVersion()).isEqualTo(UPDATED_VERSION);
         assertThat(testFactorsTaskMapping.getState()).isEqualTo(UPDATED_STATE);
         assertThat(testFactorsTaskMapping.getCreatedby()).isEqualTo(UPDATED_CREATEDBY);

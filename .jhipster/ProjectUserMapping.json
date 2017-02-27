@@ -1,0 +1,63 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "userid",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "projectid",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "STATEENUM",
+            "fieldValues": "DRAFT,INPROGRESS,COMPLETED,READY,INQUEUE,APPROVED",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "createdby",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdon",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "modifiedby",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "modifiedon",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170227064711",
+    "entityTableName": "project_user_mapping",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

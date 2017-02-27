@@ -143,3 +143,11 @@ To set up a CI environment, consult the [Setting up Continuous Integration][] pa
 [Protractor]: https://angular.github.io/protractor/
 [Leaflet]: http://leafletjs.com/
 [DefinitelyTyped]: http://definitelytyped.org/
+
+
+------------
+commands -
+
+npm run webpack:dev
+./mnvw
+mongod --config /usr/local/etc/mongod.conf
