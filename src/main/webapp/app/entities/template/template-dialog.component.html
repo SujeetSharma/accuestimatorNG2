@@ -31,16 +31,18 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th><span >Applicable</span></th>
-                        <th><span >Factor</span></th>
-                        <th><span >Category</span></th>
+                        <th><span >Applicable[todo]</span></th>
+                        <th><span >Name[todo]</span></th>
+                        <th><span >Factor[todo]</span></th>
+                        <th><span >Task[todo]</span></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let ftmapping of factorsTaskMapping ;trackBy: trackId">
                         <td><input type="checkbox" class="form-control" value="{{ftmapping.id}}" (change)="checkedFactorsTasks(ftmapping.id, $event)"/> </td>
-                        <td>{{ftmapping.factor}} </td>
-                        <td>{{ftmapping.task}} </td>
+                        <td>{{ftmapping.name}} </td>
+                        <td>{{ftmapping.factorCategory}} </td>
+                        <td>{{ftmapping.taskCategory}} </td>
                     </tr>
                 </tbody>
             </table>
