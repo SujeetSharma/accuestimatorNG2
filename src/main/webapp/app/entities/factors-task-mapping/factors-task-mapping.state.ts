@@ -76,7 +76,7 @@ export const factorsTaskMappingPopupRoute: Routes = [
     outlet: 'popup'
   },
   {
-    path: 'factorsTaskMapping-baseline',
+    path: 'factorsTaskMapping-baseline/:id',
     component: FactorsTaskMappingBaselinePopupComponent,
     data: {
         authorities: ['ROLE_USER'],

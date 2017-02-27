@@ -9,11 +9,18 @@
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
-        <div class="form-group" [hidden]="!factorsTaskMapping.id">
-            <label for="id" jhiTranslate="global.field.id">ID</label>
-            <input type="text" class="form-control" id="id" name="id"
-                   [(ngModel)]="factorsTaskMapping.id" readonly />
+        <div class="form-group">
+        <label class="form-control-label" for="field_name">Name[todo]</label>
+    <input type="text" class="form-control" name="name" id="field_name"
+           [(ngModel)]="factorsTaskMapping.name"
+    required />
+    <div [hidden]="!(editForm.controls.name?.dirty && editForm.controls.name?.invalid)">
+        <small class="form-text text-danger"
+           [hidden]="!editForm.controls.name?.errors?.required" jhiTranslate="entity.validation.required">
+            This field is required.
+        </small>
         </div>
+    </div>
         <div class="form-group">
         <label class="form-control-label" jhiTranslate="accuestimatorNg2App.factorsTaskMapping.taskCategory" for="field_taskCategory">Task Category</label>
     <!--<input type="text" class="form-control" name="taskCategory" id="field_taskCategory"

@@ -1,6 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
+
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import {
     AccuestimatorNg2SharedLibsModule,
@@ -21,7 +22,8 @@ import {
 @NgModule({
     imports: [
         AccuestimatorNg2SharedLibsModule,
-        AccuestimatorNg2SharedCommonModule
+        AccuestimatorNg2SharedCommonModule,
+        
     ],
     declarations: [
         JhiLoginModalComponent,
@@ -39,6 +41,7 @@ import {
         AuthServerProvider,
         AuthService,
         DatePipe
+        
     ],
     entryComponents: [JhiLoginModalComponent],
     exports: [

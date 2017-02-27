@@ -16,7 +16,7 @@ import {FactorCategory } from '../factor-category/factor-category.model';
 import {TaskCategory } from '../task-category/task-category.model';
 import {Factors } from '../factors/factors.model';
 import {Tasks } from '../tasks/tasks.model';
-
+import { FTEstimates } from './estimates.model';
 
 // TODO replace ng-file-upload dependency by an ng2 depedency
 // TODO Find a better way to format dates so that it works with NgbDatePicker
@@ -31,8 +31,11 @@ export class FactorsTaskMappingDialogComponent implements OnInit {
     isSaving: boolean;
     factorCategory: FactorCategory
     taskCategory: TaskCategoryService;
-    factors: FactorsService;
-    tasks: TasksService;
+    factors: Factors[];
+    tasks: Tasks[];
+    factorsByCat: Factors[];
+    tasksByCat: Tasks[];
+
     constructor(
         private jhiLanguageService: JhiLanguageService,
         public activeModal: NgbActiveModal,
@@ -90,15 +93,36 @@ export class FactorsTaskMappingDialogComponent implements OnInit {
         this.router.navigate([{ outlets: { popup: null }}]);
     }
 
+
     save () {
         this.isSaving = true;
-        if (this.factorsTaskMapping.id !== undefined) {
-            this.factorsTaskMappingService.update(this.factorsTaskMapping)
-                .subscribe((res: any) => this.onSaveSuccess(res), (res: Response) => this.onSaveError(res.json()));
-        } else {
-            this.factorsTaskMappingService.create(this.factorsTaskMapping)
-                .subscribe((res: any) => this.onSaveSuccess(res), (res: Response) => this.onSaveError(res.json()));
-        }
+       this.factorsService.findByCat(this.factorsTaskMapping.factorCategory).subscribe(
+            (res: Factors[]) => {
+                this.factorsByCat = res;
+                console.log(res);
+                this.tasksService.findByCat(this.factorsTaskMapping.taskCategory).subscribe(
+                    (res: Tasks[]) => {
+                        this.tasksByCat  = res;
+                        console.log(res);
+                        this.factorsTaskMappingService.getEstimates(this.factorsByCat, this.tasksByCat).subscribe(
+                            (res: FTEstimates) => {
+                                this.factorsTaskMapping.estimates = res;
+                                if (this.factorsTaskMapping.id !== undefined) {
+                                    this.factorsTaskMappingService.update(this.factorsTaskMapping)
+                                        .subscribe((res: any) => this.onSaveSuccess(res), (res: Response) => this.onSaveError(res.json()));
+                                } else {
+                                    this.factorsTaskMappingService.create(this.factorsTaskMapping)
+                                        .subscribe((res: any) => this.onSaveSuccess(res), (res: Response) => this.onSaveError(res.json()));
+                                }
+
+                            }
+                        );
+                    }
+                );
+            }
+       );
+       
+
     }
 
     private onSaveSuccess (result) {

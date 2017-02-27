@@ -1,3 +1,5 @@
+import { FTEstimates } from './estimates.model';
+
 const enum STATEENUM {
     'DRAFT',
     'INPROGRESS',
@@ -16,11 +18,13 @@ const enum ESTTYPEENUM {
 export class FactorsTaskMapping {
     constructor(
         public id?: string,
+        public name?: string,
         public taskCategory?: string,
         public factorCategory?: string,
         public version?: string,
         public state?: STATEENUM,
         public createdby?: string,
+        public estimates?: FTEstimates,
         public createdon?: any,
         public modifiedby?: string,
         public modifiedon?: any,

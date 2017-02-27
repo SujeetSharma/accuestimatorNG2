@@ -1,32 +1,36 @@
 
-
+ <div *ngIf="factorsTaskMappings">
+     asdfasdfasdfasd
+ </div>
 <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
     <div class="modal-header">
-        <h4 class="modal-title" id="myFactorsTaskMappingLabel" >Baseline estimates</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+        <h4 class="modal-title" id="myFactorsTaskMappingLabel" jhiTranslate="accuestimatorNg2App.factorsTaskMapping.home.createOrEditLabel">Create or edit a Factors Task Mapping</h4>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
-<!--Start -->
-
-    <div class="table-responsive" >
+     
+     <div class="table-responsive" >
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Task</th>
+                    <th>Tasks</th>
                     <th *ngFor="let factor of factors ;trackBy: trackId">{{factor.name}}</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let task of tasks ;trackBy: trackId">
-                <!-- <td><a [routerLink]="['../factorsTaskMapping', factorsTaskMapping.id ]" >{{factorsTaskMapping.id}}</a></td>-->
-                    <td>{{task.name}}</td>
-                    <td *ngFor="let factor of factors ;trackBy: trackId">
-                            <input type="text" class="form-control" name="points" id="points_description"/>
+               <tr *ngFor='let estimates of factorsTaskMapping.estimates.estimates | ValuesPipe:"taskid":true; let i = index'>
+                    <td>{{factorsTaskMapping.estimates.estimates[i].taskname}}</td>
+                    <td *ngFor="let values of estimates.values; let j = index">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="feild_factorsTaskMapping.estimates.estimates[{{i}}].values[{{j}}].points" name="factorsTaskMapping.estimates.estimates[{{i}}].values[{{j}}].points" [(ngModel)]="factorsTaskMapping.estimates.estimates[i].values[j].points"/>
+                        </div>
                     </td>
                 </tr>
             </tbody>
         </table>
-<!-- End-->
     </div>
     </div>
     <div class="modal-footer">

@@ -1,7 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy,Pipe, PipeTransform } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Response } from '@angular/http';
-
+import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 import { NgbActiveModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { EventManager, AlertService, JhiLanguageService } from 'ng-jhipster';
 
@@ -18,13 +18,19 @@ import {Factors } from '../factors/factors.model';
 import {Tasks } from '../tasks/tasks.model';
 import {StorageService} from '../shared/storage.service'
 import { Subscription } from 'rxjs/Subscription';
+import { FTEstimates } from './estimates.model';
+import { FTEstimate } from './estimate.model';
+import { Values } from './values.model';
+import { CustomerModel, RegionModel } from './customer.model';
 
 // TODO replace ng-file-upload dependency by an ng2 depedency
 // TODO Find a better way to format dates so that it works with NgbDatePicker
+
+
 @Component({
     selector: 'jhi-factors-task-mapping-baseline',
     templateUrl: './factors-task-mapping-baseline.component.html'
-})
+   })
 export class FactorsTaskMappingBaselineComponent implements OnInit {
 
     factorsTaskMapping: FactorsTaskMapping;
@@ -35,6 +41,8 @@ export class FactorsTaskMappingBaselineComponent implements OnInit {
     subscription: Subscription;
     factorCat : string;
     taskCat : string;
+    obj:any = Object;
+
     constructor(
         private jhiLanguageService: JhiLanguageService,
         public activeModal: NgbActiveModal,
@@ -44,7 +52,8 @@ export class FactorsTaskMappingBaselineComponent implements OnInit {
         private router: Router,
         private factorsService: FactorsService,
         private tasksService: TasksService,
-          private storageService: StorageService
+        private storageService: StorageService,
+        private route: ActivatedRoute
     ) {
         this.jhiLanguageService.setLocations(['factorsTaskMapping', 'sTATEENUM']);
         this.subscription = this.storageService.getFTMappingDetails().subscribe(message => { 
@@ -54,35 +63,40 @@ export class FactorsTaskMappingBaselineComponent implements OnInit {
             this.taskCat = message.taskCat;
             //this.subscription.unsubscribe;
         });
-    }
+        //console.log("mapping is -constructor" + this.factorsTaskMapping.id);
+         }
+    
     loadAll(){
-        console.log("Inside nginit --"+this.factorCat+'--'+this.taskCat);
+      
         this.factorsService.findByCat(this.factorCat).subscribe(
             (res: Factors[]) => {
                 this.factors = res;
                 console.log(res);
+                
             }
         );
-        console.log("Inside nginit --"+this.factors);
         this.tasksService.findByCat(this.taskCat).subscribe(
-            (res: Tasks[]) => {
-                this.tasks = res;
-                console.log(res);
-            }
-        );
-        console.log("Inside nginit --"+this.tasks);
+                    (res: Tasks[]) => {
+                        this.tasks = res;
+                        console.log(res);
+                }
+            );
+        
     }
+
     ngOnInit() {
         this.loadAll();
         this.isSaving = false;
         this.authorities = ['ROLE_USER', 'ROLE_ADMIN'];
        this.registerChangeInFactorsTaskMappings();
-        
+        //console.log("mapping is -nginit " + this.factorsTaskMapping.estimates.estimates);
         
     }
+
     registerChangeInFactorsTaskMappings() {
         this.eventManager.subscribe('factorsTaskBaselineModification', (response) => this.loadAll());
     }
+    
     clear () {
         this.activeModal.dismiss('cancel');
         this.router.navigate([{ outlets: { popup: null }}]);
@@ -90,13 +104,14 @@ export class FactorsTaskMappingBaselineComponent implements OnInit {
 
     save () {
         this.isSaving = true;
-        if (this.factorsTaskMapping.id !== undefined) {
+       // if (this.factorsTaskMapping.id !== undefined) {
+          // this.factorsTaskMapping.estimates = JSON.stringify(this.estimates);
             this.factorsTaskMappingService.update(this.factorsTaskMapping)
                 .subscribe((res: any) => this.onSaveSuccess(res), (res: Response) => this.onSaveError(res.json()));
-        } else {
-            this.factorsTaskMappingService.create(this.factorsTaskMapping)
-                .subscribe((res: any) => this.onSaveSuccess(res), (res: Response) => this.onSaveError(res.json()));
-        }
+       // } else {
+       //     this.factorsTaskMappingService.create(this.factorsTaskMapping)
+       //         .subscribe((res: any) => this.onSaveSuccess(res), (res: Response) => this.onSaveError(res.json()));
+       // }
     }
 
     private onSaveSuccess (result) {
@@ -133,9 +148,9 @@ export class FactorsTaskMappingBaselinePopupComponent implements OnInit, OnDestr
     ngOnInit() {
         this.routeSub = this.route.params.subscribe(params => {
             //if ( params['factor'] ) {
-            //    this.modalRef = this.factorsTaskMappingPopupService.open(FactorsTaskMappingBaselineComponent, params['factor']);
+               this.modalRef = this.factorsTaskMappingPopupService.open(FactorsTaskMappingBaselineComponent, params['id']);
            // } else {
-                this.modalRef = this.factorsTaskMappingPopupService.open(FactorsTaskMappingBaselineComponent);
+            //    this.modalRef = this.factorsTaskMappingPopupService.open(FactorsTaskMappingBaselineComponent);
             //}
 
         });

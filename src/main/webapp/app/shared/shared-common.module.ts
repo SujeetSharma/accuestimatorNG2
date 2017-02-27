@@ -3,7 +3,7 @@ import { Title } from '@angular/platform-browser';
 
 import { TranslateService } from 'ng2-translate';
 import { AlertService } from 'ng-jhipster';
-
+import {ValuesPipe} from './values.pipe';
 import {
     AccuestimatorNg2SharedLibsModule,
     JhiLanguageHelper,
@@ -25,6 +25,7 @@ export function alertServiceProvider(sanitizer: Sanitizer, translateService: Tra
     ],
     declarations: [
         FindLanguageFromKeyPipe,
+        ValuesPipe,
         JhiAlertComponent,
         JhiAlertErrorComponent
     ],
@@ -40,6 +41,7 @@ export function alertServiceProvider(sanitizer: Sanitizer, translateService: Tra
     exports: [
         AccuestimatorNg2SharedLibsModule,
         FindLanguageFromKeyPipe,
+        ValuesPipe,
         JhiAlertComponent,
         JhiAlertErrorComponent
     ]

@@ -17,7 +17,7 @@
         <table class="table table-striped">
             <thead>
             <tr>
-           <!-- <th><span jhiTranslate="global.field.id">ID</span></th> -->
+           <th><span>Name[todo]</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.taskCategory">Task Category</span></th>
             <!-- <th>   <span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.task">Task</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.factorsTaskMapping.factor">Factor</span></th>-->
@@ -39,6 +39,7 @@
             <tbody>
             <tr *ngFor="let factorsTaskMapping of factorsTaskMappings ;trackBy: trackId">
                <!-- <td><a [routerLink]="['../factorsTaskMapping', factorsTaskMapping.id ]" >{{factorsTaskMapping.id}}</a></td>-->
+                <td>{{factorsTaskMapping.name}}</td>
                 <td>{{factorsTaskMapping.taskCategory}}</td>
                <!-- <td>{{factorsTaskMapping.task}}</td>
                 <td>{{factorsTaskMapping.factor}}</td>-->
@@ -72,7 +73,7 @@
                             <span class="fa fa-remove"></span>
                         </button>
                         <button type="submit"
-                                [routerLink]="['/', { outlets: { popup: 'factorsTaskMapping-baseline' } }]"
+                                [routerLink]="['/', { outlets: { popup: 'factorsTaskMapping-baseline/'+ factorsTaskMapping.id  } }]"
                                  (click)="setFTMappingInfo(factorsTaskMapping.factorCategory,factorsTaskMapping.taskCategory)"
                                 class="btn btn-danger btn-sm">
                             <span class="fa fa-remove"></span>

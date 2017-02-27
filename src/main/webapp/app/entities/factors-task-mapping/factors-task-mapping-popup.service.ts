@@ -3,6 +3,7 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 import { FactorsTaskMapping } from './factors-task-mapping.model';
 import { FactorsTaskMappingService } from './factors-task-mapping.service';
+import { Response } from '@angular/http';
 
 @Injectable()
 export class FactorsTaskMappingPopupService {
@@ -37,4 +38,5 @@ export class FactorsTaskMappingPopupService {
         });
         return modalRef;
     }
+
 }

@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { InfiniteScrollModule } from 'angular2-infinite-scroll';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AccuestimatorNg2SharedModule } from '../shared';
 import {
     FactorCategoryService,
@@ -147,6 +147,7 @@ let ENTITY_STATES = [
 
 @NgModule({
     imports: [
+        FormsModule, ReactiveFormsModule,
         AccuestimatorNg2SharedModule,
         InfiniteScrollModule,
         RouterModule.forRoot(ENTITY_STATES, { useHash: true })
