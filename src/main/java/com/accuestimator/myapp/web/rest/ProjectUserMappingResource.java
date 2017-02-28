@@ -103,6 +103,20 @@ public class ProjectUserMappingResource {
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(projectUserMapping));
     }
 
+     /**
+     * GET  /project-user-mappings/user/:id : get the "id" projectUserMapping.
+     *
+     * @param id the id of the projectUserMapping to retrieve
+     * @return the ResponseEntity with status 200 (OK) and with body the projectUserMapping, or with status 404 (Not Found)
+     */
+    @GetMapping("/project-user-mappings/user/{login}")
+    @Timed
+    public List<ProjectUserMapping> getProjectUserMappingByUserId(@PathVariable String login) {
+        log.debug("REST request to get ProjectUserMapping : {}", login);
+        List<ProjectUserMapping> projectUserMapping = projectUserMappingRepository.findOneByUserid(login);
+        return projectUserMapping;
+    }
+
     /**
      * DELETE  /project-user-mappings/:id : delete the "id" projectUserMapping.
      *

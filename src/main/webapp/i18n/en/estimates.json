@@ -3,7 +3,7 @@
         "estimates" : {
             "home": {
                 "title": "Estimates",
-                "createLabel": "Create a new Estimates",
+                "createLabel": "New",
                 "createOrEditLabel": "Create or edit a Estimates",
                 "search": "Search for Estimates"
             },

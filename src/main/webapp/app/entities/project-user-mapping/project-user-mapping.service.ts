@@ -41,6 +41,16 @@ export class ProjectUserMappingService {
         });
     }
 
+    findByUser(login: string): Observable<ProjectUserMapping> {
+        return this.http.get(`${this.resourceUrl}/user/${login}`).map((res: Response) => {
+            let jsonResponse = res.json();
+
+            jsonResponse.createdon = this.dateUtils.convertDateTimeFromServer(jsonResponse.createdon);
+            jsonResponse.modifiedon = this.dateUtils.convertDateTimeFromServer(jsonResponse.modifiedon);
+            return jsonResponse;
+        });
+    }
+
     private convertResponse(res: any): any {
         let jsonResponse = res.json();
         for (let i = 0; i < jsonResponse.length; i++) {

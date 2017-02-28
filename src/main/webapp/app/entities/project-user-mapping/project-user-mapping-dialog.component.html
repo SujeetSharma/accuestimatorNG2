@@ -20,7 +20,7 @@
            [(ngModel)]="projectUserMapping.userid"
     required />-->
      <select required name="userid" class="form-control" id="field_userid" [(ngModel)]="projectUserMapping.userid">
-         <option *ngFor="let user of users" [ngValue]="user.id">{{user.firstName}} {{user.lastName}}</option>
+         <option *ngFor="let user of users" [ngValue]="user.login">{{user.login}}</option>
      </select>
     <div [hidden]="!(editForm.controls.userid?.dirty && editForm.controls.userid?.invalid)">
         <small class="form-text text-danger"
