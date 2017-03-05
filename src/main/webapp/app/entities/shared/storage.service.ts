@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { ReplaySubject, Subject } from 'rxjs';
  
 @Injectable()
 export class StorageService {
@@ -9,7 +9,17 @@ export class StorageService {
     private taskSubject = new ReplaySubject<any>();
     private factorSubject = new ReplaySubject<any>();
     private fTMappingSubject = new ReplaySubject<any>();
+    private projectidSubject = new Subject<any>();
  
+    getProjectidDetails(): Observable<any> {
+        return this.projectidSubject.asObservable();
+    }
+
+    setProjectidDetails(id: string, ) {
+        this.projectidSubject.next({ projectid: id });
+        //this.fSubject.complete();
+    }
+    
     getFTMappingDetails(): Observable<any> {
         return this.fTMappingSubject.asObservable();
     }

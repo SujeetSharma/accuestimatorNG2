@@ -37,18 +37,6 @@ public class Estimates implements Serializable {
     private String projectId;
 
     @NotNull
-    @Field("template_id")
-    private String templateId;
-
-    @NotNull
-    @Field("task_id")
-    private String taskId;
-
-    @NotNull
-    @Field("factor_id")
-    private String factorId;
-
-    @NotNull
     @Field("type")
     private TYPEENUM type;
 
@@ -130,46 +118,7 @@ public class Estimates implements Serializable {
     public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
-
-    public String getTemplateId() {
-        return templateId;
-    }
-
-    public Estimates templateId(String templateId) {
-        this.templateId = templateId;
-        return this;
-    }
-
-    public void setTemplateId(String templateId) {
-        this.templateId = templateId;
-    }
-
-    public String getTaskId() {
-        return taskId;
-    }
-
-    public Estimates taskId(String taskId) {
-        this.taskId = taskId;
-        return this;
-    }
-
-    public void setTaskId(String taskId) {
-        this.taskId = taskId;
-    }
-
-    public String getFactorId() {
-        return factorId;
-    }
-
-    public Estimates factorId(String factorId) {
-        this.factorId = factorId;
-        return this;
-    }
-
-    public void setFactorId(String factorId) {
-        this.factorId = factorId;
-    }
-
+    
     public TYPEENUM getType() {
         return type;
     }
@@ -327,9 +276,6 @@ public class Estimates implements Serializable {
             ", name='" + name + "'" +
             ", description='" + description + "'" +
             ", projectId='" + projectId + "'" +
-            ", templateId='" + templateId + "'" +
-            ", taskId='" + taskId + "'" +
-            ", factorId='" + factorId + "'" +
             ", type='" + type + "'" +
             ", value='" + value + "'" +
             ", version='" + version + "'" +

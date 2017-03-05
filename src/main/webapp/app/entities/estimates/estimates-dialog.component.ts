@@ -9,6 +9,8 @@ import { Estimates } from './estimates.model';
 import { EstimatesPopupService } from './estimates-popup.service';
 import { EstimatesService } from './estimates.service';
 
+import {StorageService} from '../shared/storage.service'
+import { Subscription } from 'rxjs/Subscription';
 
 // TODO replace ng-file-upload dependency by an ng2 depedency
 // TODO Find a better way to format dates so that it works with NgbDatePicker
@@ -21,15 +23,23 @@ export class EstimatesDialogComponent implements OnInit {
     estimates: Estimates;
     authorities: any[];
     isSaving: boolean;
+    subscription: Subscription;
+    projectid: string;
+
     constructor(
         private jhiLanguageService: JhiLanguageService,
         public activeModal: NgbActiveModal,
         private alertService: AlertService,
         private estimatesService: EstimatesService,
         private eventManager: EventManager,
-        private router: Router
+        private router: Router,
+        private storageService: StorageService,
     ) {
         this.jhiLanguageService.setLocations(['estimates', 'tYPEENUM', 'sTATEENUM']);
+        this.subscription = this.storageService.getProjectidDetails().subscribe(message => { 
+            console.log("Project id Message is - "+ message.projectid);
+            this.projectid = message.projectid; 
+        });
     }
 
     ngOnInit() {
@@ -44,6 +54,7 @@ export class EstimatesDialogComponent implements OnInit {
 
     save () {
         this.isSaving = true;
+        this.estimates.projectId = this.projectid;
         if (this.estimates.id !== undefined) {
             this.estimatesService.update(this.estimates)
                 .subscribe((res: any) => this.onSaveSuccess(res), (res: Response) => this.onSaveError(res.json()));

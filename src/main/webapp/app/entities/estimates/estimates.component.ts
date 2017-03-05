@@ -11,6 +11,7 @@ import { PaginationConfig } from '../../blocks/config/uib-pagination.config';
 import { Account} from '../../shared';
 import {ProjectUserMappingService} from '../project-user-mapping/project-user-mapping.service';
 import {ProjectUserMapping} from '../project-user-mapping/project-user-mapping.model';
+import {StorageService} from '../shared/storage.service';
 
 @Component({
     selector: 'jhi-estimates',
@@ -29,9 +30,15 @@ export class EstimatesComponent implements OnInit {
         private eventManager: EventManager,
         private principal: Principal,
         private projectUserMappingService: ProjectUserMappingService,
+        private storageService: StorageService,
     ) {
         this.jhiLanguageService.setLocations(['estimates', 'tYPEENUM', 'sTATEENUM']);
     }
+
+    /*setProjectId(projectid: string)
+    {
+         this.storageService.setProjectidDetails(projectid);
+    }*/
 
     loadAll() {
         this.estimatesService.query().subscribe(

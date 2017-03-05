@@ -2,76 +2,10 @@
 <div>
     <router-outlet name="navbar"></router-outlet>
 </div>
- 
 <div class="container-fluid">
-    <div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-3" style="background-color:lavender;">
-        <ngb-accordion [closeOthers]="true" activeIds="1">
-            <ngb-panel id="1" title="Define">
-                <template ngbPanelContent>
-                      <a routerLink="factor-category" >
-                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
-                            <span>Factors</span>
-                        </a> 
-                        <br/>
-                    <a routerLink="task-category" >
-                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
-                            <span>Tasks</span>
-                        </a>
-                   
-                    </template>
-            </ngb-panel>
-            <ngb-panel id="2" title="Base line">
-                <template ngbPanelContent>
-                    <a routerLink="factors-task-mapping">
-                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.entities.factorsTaskMapping">Factors Task Mapping</span>
-                        </a>
-                </template>
-            </ngb-panel>
-            <ngb-panel id="3" title="Template">
-                <template ngbPanelContent>
-                    <a routerLink="template">
-                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.entities.template">Template</span>
-                        </a>
-                </template>
-            </ngb-panel>
-            <ngb-panel id="4" title="Projects">
-                <template ngbPanelContent>
-                    <a routerLink="project" >
-                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
-                            <span jhiTranslate="global.menu.entities.project">Project</span>
-                        </a>
-                </template>
-            </ngb-panel>
-             <ngb-panel id="5" title="Allocation">
-                <template ngbPanelContent>
-                    <a routerLink="project-user-mapping" >
-                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
-                            <span >Project Allocation to Users[todo]</span>
-                        </a>
-                </template>
-            </ngb-panel>
-            <ngb-panel id="6" title="Estimates">
-                <template ngbPanelContent>
-                    <a routerLink="estimates" >
-                            <i class="fa fa-fw fa-asterisk" aria-hidden="true"></i>
-                            <span >Estimates[todo]</span>
-                        </a>
-                </template>
-            </ngb-panel>
-        </ngb-accordion>
-         </div>
-         <div class="col-sm-9" style="background-color:plum;">
-             <div class="card">
-                <router-outlet></router-outlet>
-                <router-outlet name="popup"></router-outlet>
-            </div>
-        </div>
-    </div>
+    <div class="card">
+        <router-outlet></router-outlet>
+        <router-outlet name="popup"></router-outlet>
     </div>
     <jhi-footer></jhi-footer>
 </div>
-

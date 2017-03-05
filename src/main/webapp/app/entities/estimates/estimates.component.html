@@ -1,6 +1,6 @@
-<div *ngFor="let projectUserMapping of projectUserMappings ;trackBy: trackId">
+
 <div>
-    <h2><span jhiTranslate="accuestimatorNg2App.estimates.home.title">Estimates</span> {{currentAccount.login}}
+    <h2><span jhiTranslate="accuestimatorNg2App.estimates.home.title">Estimates</span> 
         <button class="btn btn-primary float-xs-right" [routerLink]="['/', { outlets: { popup: ['estimates-new'] } }]">
             <span class="fa fa-plus"></span>
             <span  jhiTranslate="accuestimatorNg2App.estimates.home.createLabel">
@@ -75,4 +75,4 @@
         </table>
     </div>
 </div>
-</div>
+
