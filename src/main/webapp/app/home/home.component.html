@@ -1,11 +1,16 @@
-<div *ngIf="isAuthenticated">
+<div *ngIf="isAuthenticated"> 
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-12">
             <span class="hipster img-fluid img-rounded"></span>
-        </div>
-        <div class="col-md-9">
-            <h1 class="display-4" jhiTranslate="home.title">Welcome, to Accurrate Estimation Portal!</h1>
-            <p class="lead" jhiTranslate="home.subtitle">This is application can help you in estimation in a right way.</p>
+        </div>   
+    <div class="row">
+        <div class="col-md-6">
+            <span class="hipster1 img-fluid img-rounded"></span>
+        </div>   
+        <div class="col-md-6">
+            <h1 class="display-4" >Welcome, to Enterprise AccuEstimate Portal![todo]</h1>
+            <p class="lead">Estimation is a dark art to start with and is often missuesed and abused to the detriment of the development team. As any valuable project has a level of uncertainty, estimates should never been seen as promises.
+                This is application can help you in estimation in a right way. [todo]</p>
 
             <div [ngSwitch]="isAuthenticated()">
                 <div class="alert alert-success" *ngSwitchCase="true">
@@ -24,16 +29,12 @@
                 </div>
             </div>
 
-            <p jhiTranslate="home.question">
-                If you have any question on JHipster:
-            </p>
-
             <ul>
-                <li><a href="http://jhipster.github.io/" target="_blank" jhiTranslate="home.link.homepage">JHipster homepage</a></li>
-                <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" jhiTranslate="home.link.stackoverflow">JHipster on Stack Overflow</a></li>
-                <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" jhiTranslate="home.link.bugtracker">JHipster bug tracker</a></li>
-                <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" jhiTranslate="home.link.chat">JHipster public chat room</a></li>
-                <li><a href="https://twitter.com/java_hipster" target="_blank"  jhiTranslate="home.link.follow">follow @java_hipster on Twitter</a></li>
+                <li>Estimation in a project should be a challenge and something that is valued as no more and no less than an educated guess, dependant on the facts at hand.</li>
+                <li>If you use estimation as a rod to beat up developers, they will eventually learn to give longer and longer estimates, refuse to give time frames or in extreme cases just leave for a quieter life!</li>
+               <li> In the worst case, estimation can seem easy because you don’t understand the full range of challenges ahead of you, those challenges that will lead the project to fail, over-run or not deliver the value they promised.</li>
+                <li>If estimation is easy because you have done the same kind of project many times before, then you should consider why you are doing the same project again. What added value will the project give to the stakeholders and organisation you work for?</li>
+               <li> So estimation is just an educated guess based on the understanding of the current situation, the confidence a team has in its own abilities and the forces that will act on the team from project stakeholders and the wider organisation. Trying to assign actual dates and times to estimations seem a very risky strategy. </li>
             </ul>
 
             <p>
