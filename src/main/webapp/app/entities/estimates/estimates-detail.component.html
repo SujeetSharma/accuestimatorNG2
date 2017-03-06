@@ -1,84 +1,13 @@
-
-<div *ngIf="estimates">
-    <h2><span jhiTranslate="accuestimatorNg2App.estimates.detail.title">Estimates</span> {{estimates.id}}</h2>
-    <hr>
-    <jhi-alert-error></jhi-alert-error>
-    <dl class="row">
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.name">Name</span></dt>
-        <dd>
-            <span>{{estimates.name}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.description">Description</span></dt>
-        <dd>
-            <span>{{estimates.description}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.projectId">Project Id</span></dt>
-        <dd>
-            <span>{{estimates.projectId}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.templateId">Template Id</span></dt>
-        <dd>
-            <span>{{estimates.templateId}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.taskId">Task Id</span></dt>
-        <dd>
-            <span>{{estimates.taskId}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.factorId">Factor Id</span></dt>
-        <dd>
-            <span>{{estimates.factorId}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.type">Type</span></dt>
-        <dd>
-            <span jhiTranslate="{{'accuestimatorNg2App.TYPEENUM.' + estimates.type}}">{{estimates.type}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.value">Value</span></dt>
-        <dd>
-            <span>{{estimates.value}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.version">Version</span></dt>
-        <dd>
-            <span>{{estimates.version}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.state">State</span></dt>
-        <dd>
-            <span jhiTranslate="{{'accuestimatorNg2App.STATEENUM.' + estimates.state}}">{{estimates.state}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.referencedFrom">Referenced From</span></dt>
-        <dd>
-            <span>{{estimates.referencedFrom}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.createdby">Createdby</span></dt>
-        <dd>
-            <span>{{estimates.createdby}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.createdon">Createdon</span></dt>
-        <dd>
-            <span>{{estimates.createdon | date:'medium'}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.modifiedby">Modifiedby</span></dt>
-        <dd>
-            <span>{{estimates.modifiedby}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.modifiedon">Modifiedon</span></dt>
-        <dd>
-            <span>{{estimates.modifiedon | date:'medium'}}</span>
-        </dd>
-        <dt><span jhiTranslate="accuestimatorNg2App.estimates.active">Active</span></dt>
-        <dd>
-            <span>{{estimates.active}}</span>
-        </dd>
-    </dl>
-
-    <button type="submit"
-            (click)="previousState()"
-            class="btn btn-info">
-        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
-    </button>
-
-    <button type="button"
-            [routerLink]="['/', { outlets: { popup: 'estimates-edit/'+ estimates.id } }]"
-            class="btn btn-primary">
-        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
-    </button>
-</div>
+<table>
+ <thead>
+    <tr>
+    <th><span>Name</span></th>
+    <th><span >Description</span></th>
+</thead>
+<tbody>
+    <tr *ngFor="let row of tableData">
+    <td contenteditable='true' (input)="onRowClick($event, row.id)">{{ row.country }}</td>
+    <td contenteditable='true'>{{ row.capital }}</td>
+    </tr>
+</tbody>
+</table>

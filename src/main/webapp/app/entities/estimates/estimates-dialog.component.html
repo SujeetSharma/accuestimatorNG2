@@ -32,11 +32,11 @@
            [(ngModel)]="estimates.description"
      />
     </div>
-        <!--<div class="form-group">
+    <div class="form-group">
         <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.projectId" for="field_projectId">Project Id</label>
-    <input type="text" class="form-control" name="projectId" id="field_projectId"
-           [(ngModel)]="estimates.projectId"
-    required />
+      <select required name="projectId" class="form-control" id="field_projectId" [(ngModel)]="estimates.projectId">
+         <option *ngFor="let projectusermapping of projectUserMappings" [ngValue]="projectusermapping.projectid">{{projectusermapping.projectid}}</option>
+     </select>
     <div [hidden]="!(editForm.controls.projectId?.dirty && editForm.controls.projectId?.invalid)">
         <small class="form-text text-danger"
            [hidden]="!editForm.controls.projectId?.errors?.required" jhiTranslate="entity.validation.required">
@@ -44,7 +44,7 @@
         </small>
         </div>
     </div>
-        <div class="form-group">
+      <!--  <div class="form-group">
         <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.templateId" for="field_templateId">Template Id</label>
     <input type="text" class="form-control" name="templateId" id="field_templateId"
            [(ngModel)]="estimates.templateId"
@@ -80,7 +80,7 @@
         </small>
         </div>
     </div> -->
-        <div class="form-group">
+    <div class="form-group">
         <label class="form-control-label" jhiTranslate="accuestimatorNg2App.estimates.type" for="field_type">Type</label>
         <select class="form-control" name="type" [(ngModel)]="estimates.type" id="field_type"  required>
         <option value="TECHNICAL" jhiTranslate="accuestimatorNg2App.TYPEENUM.TECHNICAL">TECHNICAL</option>

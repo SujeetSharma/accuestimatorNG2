@@ -6,12 +6,7 @@ import { EventManager, ParseLinks, PaginationUtil, JhiLanguageService, AlertServ
 
 import { Estimates } from './estimates.model';
 import { EstimatesService } from './estimates.service';
-import { ITEMS_PER_PAGE, Principal } from '../../shared';
-import { PaginationConfig } from '../../blocks/config/uib-pagination.config';
-import { Account} from '../../shared';
-import {ProjectUserMappingService} from '../project-user-mapping/project-user-mapping.service';
-import {ProjectUserMapping} from '../project-user-mapping/project-user-mapping.model';
-import {StorageService} from '../shared/storage.service';
+
 
 @Component({
     selector: 'jhi-estimates',
@@ -19,18 +14,13 @@ import {StorageService} from '../shared/storage.service';
 })
 export class EstimatesComponent implements OnInit {
     estimates: Estimates[];
-    currentAccount: Account;
     searchQuery: any;
-    projectUserMappings: ProjectUserMapping[];
-
+   
     constructor(
         private jhiLanguageService: JhiLanguageService,
         private estimatesService: EstimatesService,
         private alertService: AlertService,
         private eventManager: EventManager,
-        private principal: Principal,
-        private projectUserMappingService: ProjectUserMappingService,
-        private storageService: StorageService,
     ) {
         this.jhiLanguageService.setLocations(['estimates', 'tYPEENUM', 'sTATEENUM']);
     }
@@ -51,14 +41,6 @@ export class EstimatesComponent implements OnInit {
     }
     ngOnInit() {
         this.loadAll();
-        this.principal.identity().then((account) => {
-            this.currentAccount = account;
-            console.log("login info is -" + this.currentAccount.login);
-            this.projectUserMappingService.findByUser(this.currentAccount.login).subscribe((res: ProjectUserMapping[]) => {
-                this.projectUserMappings = res;
-                console.log("login info is -" + this.projectUserMappings);
-            });
-        });
         this.registerChangeInEstimates();
     }
 

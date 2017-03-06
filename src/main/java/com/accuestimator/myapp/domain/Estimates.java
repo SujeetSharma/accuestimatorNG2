@@ -52,7 +52,7 @@ public class Estimates implements Serializable {
     @Field("state")
     private STATEENUM state;
 
-    @NotNull
+   
     @Field("referenced_from")
     private String referencedFrom;
 

@@ -12,6 +12,11 @@ import { EstimatesService } from './estimates.service';
 import {StorageService} from '../shared/storage.service'
 import { Subscription } from 'rxjs/Subscription';
 
+import { Account} from '../../shared';
+import {ProjectUserMappingService} from '../project-user-mapping/project-user-mapping.service';
+import {ProjectUserMapping} from '../project-user-mapping/project-user-mapping.model';
+import { ITEMS_PER_PAGE, Principal } from '../../shared';
+
 // TODO replace ng-file-upload dependency by an ng2 depedency
 // TODO Find a better way to format dates so that it works with NgbDatePicker
 @Component({
@@ -24,7 +29,10 @@ export class EstimatesDialogComponent implements OnInit {
     authorities: any[];
     isSaving: boolean;
     subscription: Subscription;
-    projectid: string;
+    
+    
+    currentAccount: Account;
+    projectUserMappings: ProjectUserMapping[];
 
     constructor(
         private jhiLanguageService: JhiLanguageService,
@@ -34,17 +42,27 @@ export class EstimatesDialogComponent implements OnInit {
         private eventManager: EventManager,
         private router: Router,
         private storageService: StorageService,
+        private principal: Principal,
+        private projectUserMappingService: ProjectUserMappingService,
     ) {
         this.jhiLanguageService.setLocations(['estimates', 'tYPEENUM', 'sTATEENUM']);
-        this.subscription = this.storageService.getProjectidDetails().subscribe(message => { 
-            console.log("Project id Message is - "+ message.projectid);
-            this.projectid = message.projectid; 
-        });
+        //this.subscription = this.storageService.getProjectidDetails().subscribe(message => { 
+        //    console.log("Project id Message is - "+ message.projectid);
+        //    this.projectid = message.projectid; 
+        //});
     }
 
     ngOnInit() {
         this.isSaving = false;
         this.authorities = ['ROLE_USER', 'ROLE_ADMIN'];
+         this.principal.identity().then((account) => {
+            this.currentAccount = account;
+            console.log("login info is -" + this.currentAccount.login);
+            this.projectUserMappingService.findByUser(this.currentAccount.login).subscribe((res: ProjectUserMapping[]) => {
+                this.projectUserMappings = res;
+                console.log("login info is -" + this.projectUserMappings);
+            });
+        });
     }
 
     clear () {
@@ -54,7 +72,6 @@ export class EstimatesDialogComponent implements OnInit {
 
     save () {
         this.isSaving = true;
-        this.estimates.projectId = this.projectid;
         if (this.estimates.id !== undefined) {
             this.estimatesService.update(this.estimates)
                 .subscribe((res: any) => this.onSaveSuccess(res), (res: Response) => this.onSaveError(res.json()));

@@ -12,6 +12,13 @@ export class EstimatesDetailComponent implements OnInit, OnDestroy {
 
     estimates: Estimates;
     private subscription: any;
+    
+    tableData: TableData[] = [
+        new TableData('Canada','Ottawa',1),
+        new TableData('USA','Washington DC',2),
+        new TableData('Australia','Canberra',3),
+        new TableData('UK','London',4)
+        ];
 
     constructor(
         private jhiLanguageService: JhiLanguageService,
@@ -41,4 +48,10 @@ export class EstimatesDetailComponent implements OnInit, OnDestroy {
         this.subscription.unsubscribe();
     }
 
+}
+
+export class TableData{
+    constructor(
+        public country: string,
+        public capital: string, public id: number){ }
 }

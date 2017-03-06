@@ -20,6 +20,7 @@
             <tr>
             <th><span jhiTranslate="accuestimatorNg2App.estimates.name">Name</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.estimates.description">Description</span></th>
+            <th><span >Project[todo]</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.estimates.type">Type</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.estimates.value">Value</span></th>
             <th><span jhiTranslate="accuestimatorNg2App.estimates.version">Version</span></th>
@@ -38,6 +39,7 @@
                 <!--<td><a [routerLink]="['../estimates', estimates.id ]" >{{estimates.id}}</a></td>-->
                 <td>{{estimates.name}}</td>
                 <td>{{estimates.description}}</td>
+                <td>{{estimates.projectId}}</td>
                 <td jhiTranslate="{{'accuestimatorNg2App.TYPEENUM.' + estimates.type}}">{{estimates.type}}</td>
                 <td>{{estimates.value}}</td>
                 <td>{{estimates.version}}</td>
